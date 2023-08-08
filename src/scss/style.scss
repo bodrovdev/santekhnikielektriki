@@ -1,0 +1,30 @@
+//Для разработки
+@use 'global/variables';
+@use 'node_modules/swiper/swiper-bundle.min.css';
+@use 'node_modules/aos/dist/aos.css';
+@use 'node_modules/@fancyapps/ui/dist/fancybox/fancybox.css';
+
+//Миксины
+@use 'mixins/font-face';
+@use 'mixins/screens';
+
+//Базовые стили
+@use 'base/base-container';
+@use 'base/base-figure';
+@use 'base/base-list';
+@use 'base/base-link';
+@use 'base/base-title';
+@use 'base/base-par';
+@use 'base/base-button';
+
+//Глобальные стили
+@use 'global/scaffolding';
+@use 'global/fonts';
+
+//БЭМ блоки
+@use 'blocks/page-header';
+@use 'blocks/page-content';
+@use 'blocks/page-footer';
+
+@use 'blocks/main-nav';
+@use 'blocks/modal';
