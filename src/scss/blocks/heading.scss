@@ -1,0 +1,17 @@
+@use "../mixins";
+
+.heading {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__wrapper {
+    width: 100%;
+    min-height: 464px;
+    background-image: image-set(url('../img/image/heading.png') type("image/png") 1x,
+        url('../img/image/heading.webp') type("image/webp") 1x);
+    border-radius: 16px;
+  }
+}
