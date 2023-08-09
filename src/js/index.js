@@ -117,3 +117,13 @@ window.addEventListener('load', () => {
 window.addEventListener('load', () => {
   document.body.removeAttribute('style');
 })
+
+// ? --- Ховер для кнопки в хедере
+window.addEventListener('load', () => {
+  let heading_input = document.querySelector('.heading__input');
+  let heading_submit = document.querySelector('.heading__input-submit');
+
+  heading_input.addEventListener('input', () => {
+    heading_submit.classList.toggle('heading__input-submit--disabled', heading_input.value === '')
+  })
+})
