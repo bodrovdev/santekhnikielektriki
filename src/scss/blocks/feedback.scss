@@ -1,0 +1,11 @@
+@use "../mixins";
+
+.feedback {
+  &__container {
+    display: flex;
+    align-items: flex-start;
+
+    border-radius: 16px;
+    background: #F5F5F5;
+  }
+}

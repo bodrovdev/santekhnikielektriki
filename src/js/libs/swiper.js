@@ -1,5 +1,25 @@
 import Swiper from 'swiper/bundle';
 
+// ? Слайдер с отзывами
+let reviews_slider = new Swiper(".reviews__slider", {
+  direction: "horizontal",
+  spaceBetween: 30,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+
+  pagination: {
+    el: ".reviews__slider-pagination",
+    clickable: true,
+  },
+});
+
 // ? Мобильный слайдер
 // var mobile_slider_init = false;
 

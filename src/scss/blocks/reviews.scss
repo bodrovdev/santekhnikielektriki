@@ -1,0 +1,153 @@
+@use "../mixins";
+
+.reviews {
+  margin: 51px 0 0 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    margin: 0 0 25px 0;
+  }
+
+  &__subtitle {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 40px;
+    color: #323648;
+
+    margin: 0 0 42px 0;
+  }
+
+  &__slider {
+    padding: 0 136px;
+    margin: 0 0 43px 0;
+
+    @include mixins.respond-to(notDesktop) {
+      padding: 0 5%;
+    }
+  }
+
+  &__slider-wrapper {
+    margin: 0 0 21px 0;
+  }
+
+  &__slider-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+
+    width: 370px;
+    min-height: 250px;
+    border-radius: 8px;
+    background-color: #F5F5F5;
+
+    padding: 20px 20px 20px 26px;
+  }
+
+  &__slider-slide-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    width: 100%;
+  }
+
+  &__slider-slide-image {}
+
+  &__slider-slide-info {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+    width: 100%;
+  }
+
+  &__slider-slide-info-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px 0 0 0;
+  }
+
+  &__slider-slide-info-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #323648;
+  }
+
+  &__slider-slide-info-date {
+    font-size: 14px;
+    font-weight: 400;
+    color: #BBB;
+  }
+
+  &__slider-slide-info-stars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__slider-slide-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #323648;
+  }
+
+  &__slider-pagination {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    & .swiper-pagination-bullet {
+      width: 14px;
+      height: 14px;
+      background-color: transparent;
+      border: 1px solid #D9D9D9;
+
+      transition: background-color 0.3s, border 0.3s;
+    }
+
+    & .swiper-pagination-bullet-active {
+      background-color: #BF3025;
+      border: 1px solid #BF3025;
+
+      transition: background-color 0.3s, border 0.3s;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    background-color: #BF3025;
+    border-radius: 5px;
+
+    font-family: var(--font-family-default);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--color-white);
+
+    transition: background-color 0.3s;
+
+    padding: 17px 50px;
+
+    &:hover {
+      background-color: #0099FF;
+
+      transition: background-color 0.3s;
+    }
+  }
+}

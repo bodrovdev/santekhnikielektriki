@@ -1,89 +1,5 @@
 @use "../mixins";
 
-// Анимации для бургера
-@keyframes burger_before_default {
-  from {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-  }
-
-  50% {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  to {
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes burger_before {
-  from {
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  50% {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  100% {
-    top: 0;
-    left: 50%;
-    background-color: var(--color-white);
-    transform: translateX(-50%) rotate(45deg);
-  }
-}
-
-@keyframes burger_after_default {
-  from {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) rotate(-45deg)
-  }
-
-  50% {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%)
-  }
-
-  to {
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%)
-  }
-}
-
-@keyframes burger_after {
-  from {
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  50% {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  100% {
-    bottom: 0;
-    left: 50%;
-    background-color: var(--color-white);
-    transform: translateX(-50%) rotate(-45deg);
-  }
-}
-
-// Стили
 .main-nav {
   position: relative;
 
@@ -106,8 +22,6 @@
 
     transition: transform 0.3s;
     transform-origin: left;
-
-    z-index: 1;
 
     &:hover {
       transform: scale(1.3);
@@ -144,18 +58,27 @@
   }
 
   &__burger {
+    position: relative;
+
     display: none;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
+    gap: 6px;
 
     width: 30px;
-    height: 24px;
-
+    height: 30px;
     outline: none;
     border: none;
     cursor: pointer;
 
     z-index: 15;
+
+    &--active {
+      & .main-nav__burger-line:nth-child(2) {}
+
+      & .main-nav__burger-line:nth-child(3) {}
+    }
 
     @include mixins.respond-to(notDesktop) {
       display: flex;
@@ -169,71 +92,17 @@
   &__burger-line {
     position: relative;
 
-    width: 21px;
+    width: 100%;
     height: 2px;
     background-color: var(--color-black);
-    border-radius: 5px;
 
-    transition: background-color 0.1s;
-
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 6px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      width: 15px;
-      height: 2px;
-      background-color: var(--color-black);
-      border-radius: 5px;
-
-      animation-duration: 0.4s;
-      animation-name: burger_before_default;
-      animation-fill-mode: forwards;
-
-      transition: all 0.4s;
+    &:nth-child(2) {
+      width: 70%;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 6px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      width: 15px;
-      height: 2px;
-      background-color: var(--color-black);
-      border-radius: 5px;
-
-      animation-duration: 0.4s;
-      animation-name: burger_after_default;
-      animation-fill-mode: forwards;
-
-      transition: all 0.4s;
+    &:nth-child(3) {
+      width: 40%;
     }
-  }
-
-  &__burger--active .main-nav__burger-line::before {
-    animation-duration: 0.4s;
-    animation-name: burger_before;
-    animation-fill-mode: forwards
-  }
-
-  &__burger--active .main-nav__burger-line::after {
-    animation-duration: 0.4s;
-    animation-name: burger_after;
-    animation-fill-mode: forwards;
-
-    transition: all 0.4s
-  }
-
-  &__burger--active .main-nav__burger-line {
-    background-color: transparent;
-
-    transition-delay: 0.4s;
-    transition: background-color 0.1s
   }
 
   &__mobile-menu {
@@ -248,17 +117,37 @@
       top: 0;
       left: 0;
 
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 50px;
+
+      width: 100vw;
       height: -webkit-fill-available;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior-y: contain;
+      background-color: #323648;
+      opacity: 0;
+      user-select: none;
+      pointer-events: none;
 
-      transform: translateX(-100%);
-      transition: transform 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+      transition: opacity 0.4s;
+
+      // transform: translateX(-100%);
+      // transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+
+      padding: 0 5%;
 
       &--active {
-        transform: none;
-        transition: transform 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+        opacity: 1;
+        user-select: all;
+        pointer-events: all;
+
+        transition: opacity 0.4s;
+
+        // transform: none;
+        // transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
       }
     }
   }
@@ -270,12 +159,18 @@
     gap: 33px;
 
     margin: 0 90px 0 0;
+
+    @include mixins.respond-to(notDesktop) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      margin: 0;
+    }
   }
 
   &__mobile-menu-link {
     font-size: 16px;
     font-weight: 500;
-    line-height: normal;
     color: #323648;
 
     transition: color 0.2s;
@@ -285,6 +180,12 @@
 
       transition: color 0.2s;
     }
+
+    @include mixins.respond-to(notDesktop) {
+      font-size: 50px;
+      color: var(--color-white);
+      text-transform: uppercase;
+    }
   }
 
   &__mobile-menu-phone-link {
@@ -293,12 +194,24 @@
     justify-content: center;
     gap: 9px;
 
-    margin: 0 50px 0 0;
+    margin: 0 53px 0 0;
+
+    @include mixins.respond-to(notDesktop) {
+      align-items: center;
+      gap: 20px;
+    }
 
     &:hover .main-nav__mobile-menu-phone-text {
       color: #BF3025;
 
       transition: color 0.2s;
+    }
+  }
+
+  &__mobile-menu-phone-icon {
+    @include mixins.respond-to(notDesktop) {
+      width: 25px;
+      height: auto;
     }
   }
 
@@ -309,6 +222,13 @@
     color: #323648;
 
     transition: color 0.2s;
+
+    @include mixins.respond-to(notDesktop) {
+      font-size: 21px;
+      line-height: normal;
+      color: var(--color-white);
+      text-transform: uppercase;
+    }
   }
 
   &__mobile-menu-button {
@@ -336,6 +256,17 @@
       color: var(--color-white);
 
       transition: border 0.2s, background-color 0.2s, color 0.2s;
+    }
+
+    @include mixins.respond-to(notDesktop) {
+      background-color: #BF3025;
+
+      width: 100%;
+      max-width: 280px;
+      border: 1px solid #BF3025;
+
+      font-size: 21px;
+      color: var(--color-white);
     }
   }
 }

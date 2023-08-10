@@ -147,6 +147,8 @@
   &__features-wrapper {
     position: absolute;
     bottom: -44px;
+
+    width: 82.56%;
   }
 
   &__features-container {
@@ -174,14 +176,14 @@
   &__features {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 12px;
 
     min-height: 88px;
     border-radius: 8px;
     background-color: #F5F5F5;
 
-    padding: 17px 26px;
+    padding: 17px 28px;
   }
 
   &__features-item {
@@ -202,6 +204,8 @@
       position: absolute;
       top: 50%;
       right: 0;
+
+      flex-shrink: 0;
 
       width: 1px;
       height: 54px;
