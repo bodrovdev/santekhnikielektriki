@@ -604,21 +604,87 @@
 
             <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" id="attach_input" tabindex="-1" required>
           </div>
+
           <button class="feedback__form-submit base-button">Оставить заявку</button>
           <div class="feedback__form-personal">
-            <p>*Нажимая кнопку «Оставить заявку», Вы даете свое <a href="#">согласие на обработку персональных данных</a></p>
+            <p><span style="color:#BF3025">*</span> Нажимая кнопку «Оставить заявку», Вы даете свое <a href="#">согласие на обработку персональных данных</a></p>
           </div>
         </form>
 
       </div>
       <figure class="feedback__image base-figure">
-        <img class="feedback__img" src="img/image/feedback-img.png" width="380" height="672" alt="#">
+        <img class="feedback__img" src="img/image/feedback-img.png" width="380" height="627" alt="#">
       </figure>
     </div>
   </section>
 </main>
 
 <footer class="page-footer">
+  <section class="footer-top">
+    <div class="footer-top__container base-container">
+      <picture class="footer-too__logo-picture">
+        <source srcset="img/image/logo.webp" type="image/webp">
+        <img class="footer-top__logo-img" src="img/image/logo.png" width="272" height="53" alt="#">
+      </picture>
+      <ul class="footer-top__list base-list">
+        <li class="footer-top__list-item">
+          <a class="footer-top__list-link base-link" href="#">Главная</a>
+        </li>
+        <li class="footer-top__list-item">
+          <a class="footer-top__list-link base-link" href="#">Этапы работы</a>
+        </li>
+        <li class="footer-top__list-item">
+          <a class="footer-top__list-link base-link" href="#">Преимущества</a>
+        </li>
+        <li class="footer-top__list-item">
+          <a class="footer-top__list-link base-link" href="#">Отзывы</a>
+        </li>
+      </ul>
+      <div class="footer-top__contacts">
+        <h3 class="footer-top__contacts-title base-title">Контакты</h3>
+        <ul class="footer-top__contacts-list base-list">
+          <li class="footer-top__contacts-list-item">
+            <a class="footer-top__contacts-list-content base-link">
+              <svg class="footer-top__contacts-list-icon" width="16" height="21" aria-hidden="true">
+                <use href="img/icon/sprite.svg#location-icon"></use>
+              </svg>
+              <span class="footer-top__contacts-list-text">г. Екатеринбург, ул. Чернышевского, д.7, офис 203</span>
+            </a>
+          </li>
+          <li class="footer-top__contacts-list-item">
+            <a class="footer-top__contacts-list-content base-link" href="tel:+79371722335">
+              <svg class="footer-top__contacts-list-icon" width="17" height="16" aria-hidden="true">
+                <use href="img/icon/sprite.svg#phone-icon"></use>
+              </svg>
+              <span class="footer-top__contacts-list-text">+7 937 172 - 23-35</span>
+            </a>
+          </li>
+          <li class="footer-top__contacts-list-item">
+            <a class="footer-top__contacts-list-content base-link" href="#">
+              <svg class="footer-top__contacts-list-icon" width="24" height="24" aria-hidden="true">
+                <use href="img/icon/sprite.svg#location-icon"></use>
+              </svg>
+              <span class="footer-top__contacts-list-text"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-bottom">
+    <div class="footer-bottom__container base-container">
+      <span class="footer-bottom__copyright"></span>
+      <a class="footer-bottom__user base-link" href="#"></a>
+      <a class="footer-bottom__isart-link base-link" target="_blank" rel="noreferrer noopener" href="https://is-art.ru/">
+        <span class="footer-bottom__isart-text">Разработано</span>
+        <svg class="footer-bottom__isart-icon" width="52" height="22" aria-hidden="true">
+          <use href="img/icon/sprite.svg#isart-icon"></use>
+        </svg>
+      </a>
+    </div>
+  </section>
+
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
