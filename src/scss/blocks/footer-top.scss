@@ -1,0 +1,55 @@
+@use "../mixins";
+
+.footer-top {
+  background-color: rgba(245, 245, 245, 1);
+
+  margin: 60px 0 0 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 128px;
+
+    padding: 27px 0 81px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  &__link {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #323648;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 29px;
+  }
+
+  &__contacts-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #323648;
+
+    margin: 0 0 14px 0;
+  }
+
+  &__contacts-list-content {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #323648;
+  }
+}
