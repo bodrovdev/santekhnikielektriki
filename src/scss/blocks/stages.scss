@@ -1,7 +1,7 @@
 @use "../mixins";
 
 .stages {
-  margin: 45px 0 0 0;
+  margin: 49px 0 0 0;
 
   &__container {
     display: flex;
@@ -63,7 +63,7 @@
   &__item-num {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 11px;
 
     color: rgba(230, 230, 235, 0.50);
     font-size: 90px;

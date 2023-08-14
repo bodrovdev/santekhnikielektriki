@@ -25,7 +25,7 @@
 
   &__slider {
     padding: 0 136px;
-    margin: 0 0 43px 0;
+    margin: 0 0 30px 0;
 
     @include mixins.respond-to(notDesktop) {
       padding: 0 5%;
@@ -33,7 +33,7 @@
   }
 
   &__slider-wrapper {
-    margin: 0 0 21px 0;
+    margin: 0 0 27px 0;
   }
 
   &__slider-slide {
@@ -142,7 +142,7 @@
 
     transition: background-color 0.3s;
 
-    padding: 17px 50px;
+    padding: 15px 53px;
 
     &:hover {
       background-color: #0099FF;

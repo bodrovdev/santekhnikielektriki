@@ -4,6 +4,7 @@ import Swiper from 'swiper/bundle';
 let reviews_slider = new Swiper(".reviews__slider", {
   direction: "horizontal",
   spaceBetween: 30,
+  // initialSlide: 1,
 
   breakpoints: {
     320: {
