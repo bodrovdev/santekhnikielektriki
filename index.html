@@ -578,6 +578,37 @@
   <section class="feedback">
     <div class="feedback__container base-container">
       <div class="feedback__column">
+        <h2 class="feedback__column-title base-title">Оставьте заявку и мы подберем<br> специалиста для выполнения работ</h2>
+        <form class="feedback__column-form">
+
+          <div class="feedback__form-formset">
+            <input class="feedback__form-input" placeholder="Имя" type="text">
+            <input class="feedback__form-input" placeholder="Телефон" type="tel">
+            <textarea class="feedback__form-textarea" placeholder="Что нужно сделать"></textarea>
+          </div>
+
+          <div class="feedback__form-attach">
+            <ul class="feedback__form-attach-list base-list" id="attach_list"></ul>
+            <div class="feedback__form-attach-info">
+              <button class="feedback__form-attach-button base-button" type="button" id="attach_button">
+                <img src="img/image/attach-icon.png" width="30" height="30" aria-hidden="true">
+              </button>
+              <div class="feedback__form-attach-side">
+                <h3 class="feedback__form-attach-side-title base-title">Прикрепить фотографии</h3>
+                <span class="feedback__form-attach-side-text">
+                  Не больше 10 файлов.<br>
+                  Размер файла не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
+                </span>
+              </div>
+            </div>
+
+            <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" id="attach_input" tabindex="-1" required>
+          </div>
+          <button class="feedback__form-submit base-button">Оставить заявку</button>
+          <div class="feedback__form-personal">
+            <p>*Нажимая кнопку «Оставить заявку», Вы даете свое <a href="#">согласие на обработку персональных данных</a></p>
+          </div>
+        </form>
 
       </div>
       <figure class="feedback__image base-figure">
