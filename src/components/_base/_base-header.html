@@ -30,6 +30,45 @@
     </div>
   </div> -->
 
+  <div class="reviews-modal reviews-modal--active">
+    <div class="reviews-modal__wrapper">
+      <button class="reviews-modal__close base-button" type="button">
+        <svg class="reviews-modal__close-icon" width="16" height="16" aria-hidden="true">
+          <use href="img/icon/sprite.svg#modal-close-icon"></use>
+        </svg>
+      </button>
+      <div class="reviews-modal__inner">
+        <h2 class="reviews-modal__title base-title">Оформление отзыва</h2>
+        <form class="reviews-modal__form">
+
+          <div class="reviews-modal__image-block">
+            <div class="reviews-modal__image-circle">
+              <button class="reviews-modal__image-block-button base-button" type="button" id="reviews_attach_button">
+                <svg class="reviews-modal__image-block-button-icon" width="24" height="24" aria-hidden="true">
+                  <use href="img/icon/sprite.svg#reviews-button-icon"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="reviews-modal__image-info">
+              <span class="reviews-modal__image-caption">
+                Добавьте фотографию
+              </span>
+              <span class="reviews-modal__image-desc">
+                Размер документа не должен превышать 25 Мб. Формат: .jpeg, .jpg, .png
+              </span>
+            </div>
+
+            <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" id="reviews_attach_input" tabindex="-1" required>
+          </div>
+
+        </form>
+      </div>
+      <!-- <div class="reviews-modal__success">
+        <span class="reviews-modal__success-text">Спасибо, Ваш отзыв важен для нас 🥰</span>
+      </div> -->
+    </div>
+  </div>
+
   <header class="page-header">
     <nav class="main-nav">
       <div class="main-nav__container base-container">

@@ -38,6 +38,19 @@
 
     padding: 0 50px 0 0;
 
+    &:hover {
+      & .stages__item-num {
+        color: #09f;
+
+        transition: color 0.2s;
+      }
+
+      & .stages__item-image {
+        transform: scale(1.1);
+        transition: transform 0.2s;
+      }
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -69,10 +82,14 @@
     font-size: 90px;
     line-height: normal;
     font-weight: 500;
+
+    transition: color 0.2s;
   }
 
   &__item-image {
     align-self: flex-end;
+
+    transition: transform 0.2s;
 
     margin: 0 0 20px 0;
   }

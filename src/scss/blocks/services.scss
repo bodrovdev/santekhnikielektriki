@@ -26,11 +26,23 @@
   }
 
   &__item {
-    &--opened {
+    position: relative;
+
+    padding: 0;
+
+    &--active {
+      padding: 0 0 370px 0;
+
+      & .services__item-card::after {
+        bottom: -400px;
+
+        transition: bottom 0.6s cubic-bezier(.5, .7, .7, .5);
+      }
+
       & .services__item-card-button {
         background-color: var(--color-white);
 
-        color: #323648;
+        color: var(--color-black);
 
         transition: background-color 0.3s, color 0.3s;
 
@@ -42,10 +54,53 @@
           transition: background-color 0.3s, color 0.3s;
         }
       }
+
+      & .services__item-pricing {
+        display: grid;
+      }
     }
   }
 
+  &__item-pricing {
+    position: absolute;
+    top: 160px;
+
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(530px, 1fr));
+    gap: 19px 30px;
+
+    height: fit-content;
+    border-radius: 16px;
+    background-color: #F5F5F5;
+
+    padding: 40px 40px 25px 40px;
+  }
+
+  &__item-pricing-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px dashed#BBB;
+
+    padding: 19px 48px 15px 0;
+  }
+
+  &__item-pricing-name {
+    font-size: 16px;
+    font-weight: 400;
+    color: #323648;
+  }
+
+  &__item-pricing-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #323648;
+  }
+
   &__item-card {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -56,8 +111,40 @@
     min-height: 145px;
     border-radius: 8px;
     background-color: #F5F5F5;
+    overflow: hidden;
+
+    transition: background-color 0.3s, color 0.3s;
 
     padding: 23px 20px;
+
+    z-index: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -500px;
+      left: -40px;
+
+      border-radius: 40%;
+      width: 380px;
+      height: 480px;
+      background-color: #09f;
+
+      transition: bottom 0.6s cubic-bezier(.5, .7, .7, .5);
+      animation: 6s cubic-bezier(.5, .7, .7, .5) infinite drift;
+
+      z-index: -1;
+    }
+  }
+
+  @keyframes drift {
+    from {
+      transform: rotate(0deg);
+    }
+
+    from {
+      transform: rotate(360deg);
+    }
   }
 
   &__item-card-top {
