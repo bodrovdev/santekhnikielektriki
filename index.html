@@ -30,6 +30,45 @@
     </div>
   </div> -->
 
+  <div class="reviews-modal reviews-modal--active">
+    <div class="reviews-modal__wrapper">
+      <button class="reviews-modal__close base-button" type="button">
+        <svg class="reviews-modal__close-icon" width="16" height="16" aria-hidden="true">
+          <use href="img/icon/sprite.svg#modal-close-icon"></use>
+        </svg>
+      </button>
+      <div class="reviews-modal__inner">
+        <h2 class="reviews-modal__title base-title">Оформление отзыва</h2>
+        <form class="reviews-modal__form">
+
+          <div class="reviews-modal__image-block">
+            <div class="reviews-modal__image-circle">
+              <button class="reviews-modal__image-block-button base-button" type="button" id="reviews_attach_button">
+                <svg class="reviews-modal__image-block-button-icon" width="24" height="24" aria-hidden="true">
+                  <use href="img/icon/sprite.svg#reviews-button-icon"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="reviews-modal__image-info">
+              <span class="reviews-modal__image-caption">
+                Добавьте фотографию
+              </span>
+              <span class="reviews-modal__image-desc">
+                Размер документа не должен превышать 25 Мб. Формат: .jpeg, .jpg, .png
+              </span>
+            </div>
+
+            <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" id="reviews_attach_input" tabindex="-1" required>
+          </div>
+
+        </form>
+      </div>
+      <!-- <div class="reviews-modal__success">
+        <span class="reviews-modal__success-text">Спасибо, Ваш отзыв важен для нас 🥰</span>
+      </div> -->
+    </div>
+  </div>
+
   <header class="page-header">
     <nav class="main-nav">
       <div class="main-nav__container base-container">
@@ -132,8 +171,59 @@
               <button class="services__item-card-button base-button" type="button">Прайс</button>
             </div>
           </div>
+
+          <div class="services__item-pricing">
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+            <div class="services__item-pricing-item">
+              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-price">от <span>500</span> ₽</span>
+            </div>
+          </div>
         </div>
-        <div item-class="services__item">
+        <div class="services__item">
           <div class="services__item-card">
             <div class="services__item-card-top">
               <h3 class="services__item-card-title base-title">Устранение течи</h3>
@@ -144,8 +234,11 @@
               <button class="services__item-card-button base-button" type="button">Прайс</button>
             </div>
           </div>
+
+          <div class="services__item-pricing"></div>
+
         </div>
-        <div item-class="services__item">
+        <div class="services__item">
           <div class="services__item-card">
             <div class="services__item-card-top">
               <h3 class="services__item-card-title base-title">Устранение течи</h3>
@@ -156,8 +249,11 @@
               <button class="services__item-card-button base-button" type="button">Прайс</button>
             </div>
           </div>
+
+          <div class="services__item-pricing"></div>
+
         </div>
-        <div item-class="services__item">
+        <div class="services__item">
           <div class="services__item-card">
             <div class="services__item-card-top">
               <h3 class="services__item-card-title base-title">Устранение течи</h3>
@@ -168,8 +264,11 @@
               <button class="services__item-card-button base-button" type="button">Прайс</button>
             </div>
           </div>
+
+          <div class="services__item-pricing"></div>
+
         </div>
-        <div item-class="services__item">
+        <div class="services__item">
           <div class="services__item-card">
             <div class="services__item-card-top">
               <h3 class="services__item-card-title base-title">Устранение течи</h3>
@@ -180,8 +279,11 @@
               <button class="services__item-card-button base-button" type="button">Прайс</button>
             </div>
           </div>
+
+          <div class="services__item-pricing"></div>
+
         </div>
-        <div item-class="services__item">
+        <div class="services__item">
           <div class="services__item-card">
             <div class="services__item-card-top">
               <h3 class="services__item-card-title base-title">Устранение течи</h3>
@@ -192,8 +294,11 @@
               <button class="services__item-card-button base-button" type="button">Прайс</button>
             </div>
           </div>
+
+          <div class="services__item-pricing"></div>
+
         </div>
-        <div item-class="services__item">
+        <div class="services__item">
           <div class="services__item-card">
             <div class="services__item-card-top">
               <h3 class="services__item-card-title base-title">Устранение течи</h3>
@@ -204,8 +309,11 @@
               <button class="services__item-card-button base-button" type="button">Прайс</button>
             </div>
           </div>
+
+          <div class="services__item-pricing"></div>
+
         </div>
-        <div item-class="services__item">
+        <div class="services__item">
           <div class="services__item-card">
             <div class="services__item-card-top">
               <h3 class="services__item-card-title base-title">Устранение течи</h3>
@@ -216,7 +324,11 @@
               <button class="services__item-card-button base-button" type="button">Прайс</button>
             </div>
           </div>
+
+          <div class="services__item-pricing"></div>
+
         </div>
+
       </div>
     </div>
   </section>
@@ -258,7 +370,6 @@
   </section>
 
   <section class="features">
-
     <div class="features__container base-container">
       <h2 class="features__title section-title base-title">Преимущества</h2>
       <div class="features__wrapper">
@@ -622,10 +733,12 @@
 <footer class="page-footer">
   <section class="footer-top">
     <div class="footer-top__container base-container">
-      <picture class="footer-too__logo-picture">
-        <source srcset="img/image/logo.webp" type="image/webp">
-        <img class="footer-top__logo-img" src="img/image/logo.png" width="272" height="53" alt="#">
-      </picture>
+      <a class="footer-top__logo-link base-link" href="index.html">
+        <picture class="footer-too__logo-picture">
+          <source srcset="img/image/logo.webp" type="image/webp">
+          <img class="footer-top__logo-img" src="img/image/logo.png" width="272" height="53" alt="#">
+        </picture>
+      </a>
       <ul class="footer-top__list base-list">
         <li class="footer-top__list-item">
           <a class="footer-top__list-link base-link" href="#">Главная</a>
@@ -644,12 +757,12 @@
         <h3 class="footer-top__contacts-title base-title">Контакты</h3>
         <ul class="footer-top__contacts-list base-list">
           <li class="footer-top__contacts-list-item">
-            <a class="footer-top__contacts-list-content base-link">
+            <span class="footer-top__contacts-list-content">
               <svg class="footer-top__contacts-list-icon" width="16" height="21" aria-hidden="true">
                 <use href="img/icon/sprite.svg#location-icon"></use>
               </svg>
               <span class="footer-top__contacts-list-text">г. Екатеринбург, ул. Чернышевского, д.7, офис 203</span>
-            </a>
+            </span>
           </li>
           <li class="footer-top__contacts-list-item">
             <a class="footer-top__contacts-list-content base-link" href="tel:+79371722335">
@@ -660,11 +773,11 @@
             </a>
           </li>
           <li class="footer-top__contacts-list-item">
-            <a class="footer-top__contacts-list-content base-link" href="#">
+            <a class="footer-top__contacts-list-content base-link" href="mailto:santex.ekb35@yandex.ru">
               <svg class="footer-top__contacts-list-icon" width="24" height="24" aria-hidden="true">
                 <use href="img/icon/sprite.svg#location-icon"></use>
               </svg>
-              <span class="footer-top__contacts-list-text"></span>
+              <span class="footer-top__contacts-list-text">santex.ekb35@yandex.ru</span>
             </a>
           </li>
         </ul>
@@ -674,8 +787,8 @@
 
   <section class="footer-bottom">
     <div class="footer-bottom__container base-container">
-      <span class="footer-bottom__copyright"></span>
-      <a class="footer-bottom__user base-link" href="#"></a>
+      <span class="footer-bottom__copyright">© ИП "КОСТЫШЕВ А.С.". Все права защищены, 2011-2023</span>
+      <a class="footer-bottom__user base-link" href="#">Пользовательское соглашение</a>
       <a class="footer-bottom__isart-link base-link" target="_blank" rel="noreferrer noopener" href="https://is-art.ru/">
         <span class="footer-bottom__isart-text">Разработано</span>
         <svg class="footer-bottom__isart-icon" width="52" height="22" aria-hidden="true">
