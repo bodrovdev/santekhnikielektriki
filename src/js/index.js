@@ -1,6 +1,3 @@
-// import { lock, unlock } from 'tua-body-scroll-lock';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-
 // ? --- Отключение подсветки ошибок в инпутах
 window.addEventListener('load', () => {
   if (!(document.querySelectorAll('input') === null)) {
@@ -27,7 +24,6 @@ heading_input.addEventListener('input', () => {
 function removeStyle(item) {
   item.setAttribute('style', '');
 }
-
 let services_cards = document.querySelectorAll('.services__item');
 services_cards.forEach(card => {
   card.querySelector('.services__item-card-button').addEventListener('click', () => {
@@ -55,6 +51,25 @@ function servicePricingLayout() {
     card.querySelector('.services__item-pricing').setAttribute('style', `left:${services_cards_wrapper.offsetLeft - card.offsetLeft}px!important; width:${services_cards_wrapper.offsetWidth}px!important;`)
   })
 }
-
 window.addEventListener('load', servicePricingLayout);
 window.addEventListener('resize', servicePricingLayout);
+
+// ? --- Загрузка файлов в блоке с обратной связью
+import { fileUpload } from "./fileUpload";
+
+let feedback_attach_input = document.getElementById('attach_input');
+let feedback_attach_button = document.getElementById('attach_button');
+let feedback_attach_block = document.getElementById('attach_list');
+let feedback_attach_element = function (source, value) {
+  return `
+  <li class="feedback__form-attach-item">
+    <button class="feedback__form-attach-cancel base-button" type="button" data-name="${value.name}"></button>
+    <a class="base-link" href="${source}" data-fancybox>
+      <img class="feedback__form-attach-img" src="${source}" width="40" height="40" alt="${value.name}">
+    </a>
+  </li>
+  `
+}
+let feedback_attach_element_class = `feedback__form-attach-item`;
+
+fileUpload(feedback_attach_input, feedback_attach_button, feedback_attach_block, feedback_attach_element, feedback_attach_element_class);

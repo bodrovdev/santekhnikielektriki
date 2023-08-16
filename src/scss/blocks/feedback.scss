@@ -158,6 +158,12 @@
 
       transition: background-color 0.2s;
     }
+
+    &--disabled {
+      opacity: 0.5;
+      user-select: none;
+      pointer-events: none;
+    }
   }
 
   &__form-attach-side {
