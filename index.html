@@ -39,33 +39,54 @@
       </button>
       <div class="reviews-modal__inner">
         <h2 class="reviews-modal__title base-title">Оформление отзыва</h2>
-        <form class="reviews-modal__form">
+        <form class="reviews-modal__form" id="reviewes_modal_form">
 
-          <div class="reviews-modal__image-block">
-            <div class="reviews-modal__image-circle">
-              <button class="reviews-modal__image-block-button base-button" type="button" id="reviews_attach_button">
-                <svg class="reviews-modal__image-block-button-icon" width="24" height="24" aria-hidden="true">
-                  <use href="img/icon/sprite.svg#reviews-button-icon"></use>
-                </svg>
-              </button>
-            </div>
+          <div class="reviews-modal__image">
+            <button class="reviews-modal__image-button base-button" type="button" id="reviews_attach_button">
+              <svg class="reviews-modal__image-button-icon" width="24" height="24" aria-hidden="true">
+                <use href="img/icon/sprite.svg#reviews-button-icon"></use>
+              </svg>
+            </button>
+            <div class="reviews-modal__image-circle" id="reviews_attach_block"></div>
             <div class="reviews-modal__image-info">
-              <span class="reviews-modal__image-caption">
+              <h3 class="reviews-modal__image-title reviews-modal__form-title base-title">
                 Добавьте фотографию
-              </span>
+              </h3>
               <span class="reviews-modal__image-desc">
-                Размер документа не должен превышать 25 Мб. Формат: .jpeg, .jpg, .png
+                Размер документа не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
               </span>
             </div>
-
             <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" id="reviews_attach_input" tabindex="-1" required>
           </div>
 
+          <label class="reviews-modal__name reviews-modal__form-title">Ваше имя
+            <input class="reviews-modal__name-input" type="text" name="name">
+          </label>
+
+          <div class="reviews-modal__rating">
+            <h3 class="reviews-modal__rating-title reviews-modal__form-title base-title">Оценка</h3>
+            <div class="reviews-modal__rating-body">
+              <button class="reviews-modal__rating-button base-button" type="button" data-rating="1" aria-label="Одна звезда"></button>
+              <button class="reviews-modal__rating-button base-button" type="button" data-rating="2" aria-label="Две звезды"></button>
+              <button class="reviews-modal__rating-button base-button" type="button" data-rating="3" aria-label="Три звезды"></button>
+              <button class="reviews-modal__rating-button base-button" type="button" data-rating="4" aria-label="Четыре звезды"></button>
+              <button class="reviews-modal__rating-button base-button" type="button" data-rating="5" aria-label="Пять звёзд"></button>
+            </div>
+            <input class="reviews-modal__rating-input visually-hidden" type="text" name="rating" value="1" aria-hidden="true" required>
+          </div>
+
+          <label class="reviews-modal__text reviews-modal__form-title">Отзыв
+            <textarea class="reviews-modal__text-textarea" name="text"></textarea>
+          </label>
+
+          <button class="reviews-modal__submit base-button" type="submit">Отправить</button>
+
         </form>
       </div>
-      <!-- <div class="reviews-modal__success">
-        <span class="reviews-modal__success-text">Спасибо, Ваш отзыв важен для нас 🥰</span>
-      </div> -->
+      <div class="reviews-modal__success">
+        <span>🥰</span>
+        <span>Спасибо, Ваш отзыв важен для нас!</span>
+      </div>
     </div>
   </div>
 
@@ -682,7 +703,7 @@
     </div>
 
     <div class="reviews__container base-container">
-      <button class="reviews__button base-button">Оставить отзыв</button>
+      <button class="reviews__button reviews-modal__open base-button">Оставить отзыв</button>
     </div>
   </section>
 
@@ -699,9 +720,9 @@
           </div>
 
           <div class="feedback__form-attach">
-            <ul class="feedback__form-attach-list base-list" id="attach_list"></ul>
+            <ul class="feedback__form-attach-list base-list" id="feedback_attach_list"></ul>
             <div class="feedback__form-attach-info">
-              <button class="feedback__form-attach-button base-button" type="button" id="attach_button">
+              <button class="feedback__form-attach-button base-button" type="button" id="feedback_attach_button">
                 <img src="img/image/attach-icon.png" width="30" height="30" aria-hidden="true">
               </button>
               <div class="feedback__form-attach-side">
@@ -713,7 +734,7 @@
               </div>
             </div>
 
-            <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" id="attach_input" tabindex="-1" required>
+            <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" id="feedback_attach_input" tabindex="-1" required>
           </div>
 
           <button class="feedback__form-submit base-button">Оставить заявку</button>
