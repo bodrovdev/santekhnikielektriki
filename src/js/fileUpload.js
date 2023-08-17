@@ -30,7 +30,6 @@ function fileUpload(input, button, targetBlock, elementBlock, elementClass) {
   // ? Отрисовка результирующего массива
   function renderList(arr) {
     let array = Array.from(arr);
-
     targetBlock.innerHTML = '';
 
     array.forEach(item => {
@@ -93,6 +92,8 @@ function fileUpload(input, button, targetBlock, elementBlock, elementClass) {
         buttonStatus();
       })()
     }
+
+    console.log(input.files);
   }
 
   // ? - Удаление элемента
@@ -108,6 +109,8 @@ function fileUpload(input, button, targetBlock, elementBlock, elementClass) {
 
     setFilesInsideInput(input, inputFiles);
     buttonStatus();
+
+    console.log(input.files);
   }
 
   button.addEventListener('click', () => {

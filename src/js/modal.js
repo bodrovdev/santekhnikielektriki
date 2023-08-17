@@ -1,70 +1,41 @@
 // import { lock, unlock } from 'tua-body-scroll-lock';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-// ? --- Модалки
-// ? - Варианты закрытия модалки
-function modalClosing(modal_class) {
-  window.addEventListener('click', (e) => {
-    if (e.target === document.querySelector(`${modal_class}__close`)) {
-      closeFormModal(modal_class);
-    }
-    else if (e.target !== e.currentTarget) {
-      closeFormModal(modal_class);
-    }
-  })
-}
+// ? --- Модалка с формой добавления отзыва
+let reviews_modal = document.querySelector('.reviews-modal');
+let reviews_modal_open = document.querySelector('.reviews-modal__open');
+let reviews_modal_close = document.querySelector('.reviews-modal__close');
+let reviews_modal_form = document.querySelector('.reviews-modal__form');
 
-// ? - Закрытие модалки
-function closeFormModal(modal_class) {
-  document.querySelector(`.${modal_class}`).classList.remove(`${modal_class}--active`);
-  enableBodyScroll(modal_class);
-}
+// ? - Открытие
+reviews_modal_open.addEventListener('click', () => {
+  reviews_modal.classList.add('reviews-modal--active');
+  disableBodyScroll(reviews_modal);
+});
 
-// ? --- Модалка с формой
-window.addEventListener('load', () => {
-  if (!(document.querySelector('#modal_with_form') === null)) {
+// ? - Закрытие
+reviews_modal_close.addEventListener('click', () => {
+  reviews_modal.classList.remove('reviews-modal--active');
+  reviews_modal.querySelector(`.reviews-modal__inner`).classList.remove(`reviews-modal__inner--hidden`);
+  reviews_modal.querySelector(`.reviews-modal__success`).classList.remove(`reviews-modal__success--active`);
+  enableBodyScroll(reviews_modal);
+})
 
-    // let modal_with_form = document.getElementById('modal-with-form');
-    // let modal_with_form_close = document.getElementById('modal-with-form-close');
-    // let modal_with_form_buttons = document.querySelectorAll('.page-button');
-    // let modal_with_form_formset = document.getElementById('modal_with_form_formset');
-
-    // ? - Открытие модалки на нажатие кнопки
-    // modal_with_form_buttons.forEach((button) => {
-    //   button.addEventListener('click', () => {
-    //     modal_with_form.classList.add('modal-form--active');
-    //     lock(modal_with_form);
-    //   })
-    // })
-
-    // ? - Подтверждение отправки модалки
-    // modal_with_form_formset.addEventListener('submit', (e) => {
-    //   e.preventDefault();
-    //   document.querySelector('.modal-form__inner').classList.add('modal-form__inner--hidden');
-    //   document.querySelector('.modal-form__success').classList.add('modal-form__success--active');
-    // })
+document.addEventListener('click', (e) => {
+  if (e.target === reviews_modal_open) {
+    return;
+  }
+  else if (!document.querySelector('.reviews-modal__wrapper').contains(e.target)) {
+    reviews_modal.classList.remove('reviews-modal--active');
+    reviews_modal.querySelector(`.reviews-modal__inner`).classList.remove(`reviews-modal__inner--hidden`);
+    reviews_modal.querySelector(`.reviews-modal__success`).classList.remove(`reviews-modal__success--active`);
+    enableBodyScroll(reviews_modal);
   }
 })
 
-// ? --- Модалка без формы
-window.addEventListener('load', () => {
-  if (!(document.querySelector('#modal_without_form') === null) &&
-    !(document.querySelector('.modal-without-form__formset') === null)) {
-
-    // let modal_without_form = document.getElementById('modal_without_form');
-    // let modal_without_form_formset = document.querySelector('.modal-without-form__formset');
-
-    // ? - Открытие модалки с подтверждением отправки формы
-    // modal_without_form_formset.addEventListener('submit', (e) => {
-    //   e.preventDefault();
-    //   modal_without_form.classList.add('modal-without-form--active');
-    //   disableBodyScroll(modal_without_form);
-
-    //   modalClosing(`modal-without-form`);
-
-    //   document.querySelector('.page-contacts__form-body-formset').querySelectorAll('input, textarea').forEach(item => {
-    //     item.value = '';
-    //   })
-    // })
-  }
-});
+// ? - Подтверждение отправки модалки
+reviews_modal_form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  document.querySelector('.reviews-modal__inner').classList.add('reviews-modal__inner--hidden');
+  document.querySelector('.reviews-modal__success').classList.add('reviews-modal__success--active');
+})
