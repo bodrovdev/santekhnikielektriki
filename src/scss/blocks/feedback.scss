@@ -154,7 +154,7 @@
     transition: background-color 0.2s;
 
     &:hover {
-      background-color: #0099FF;
+      background-color: #0099FF !important;
 
       transition: background-color 0.2s;
     }
@@ -171,7 +171,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 25px;
+    gap: 12px;
   }
 
   &__form-attach-side-title {

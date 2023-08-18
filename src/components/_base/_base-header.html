@@ -29,34 +29,27 @@
           <span class="order-modal__inner-steps">шаг: <span>1</span> из 2</span>
         </div>
         <form class="order-modal__inner-body order-modal__form" id="order_modal_form">
-          <div class="order-modal__inner-formset">
-
+          <div class="order-modal__inner-formset order-modal__inner-formset--active order-modal__inner-formset--one">
             <label class="order-modal__inner-label">Что нужно сделать?
-              <input class="order-modal__inner-input order-modal__inner-input--work" type="text" name="order_work">
+              <input class="order-modal__inner-input order-modal__inner-input--work" type="text" name="order_work" required>
               <div class="order-modal__inner-label-features">
                 <div class="order-modal__features-item">
-                  <svg class="order-modal__inner__features-item-icon" width="32" height="32" aria-hidden="true">
-                    <use href="img/icon/sprite.svg#modal-features-1-icon"></use>
-                  </svg>
+                  <img class="order-modal__features-item-img" src="img/image/order-features-1.png" width="32" height="32" aria-hidden="true">
                   <span class="order-modal__inner__features-item-text">Бесплатный выезд</span>
                 </div>
                 <div class="order-modal__features-item">
-                  <svg class="order-modal__inner__features-item-icon" width="32" height="32" aria-hidden="true">
-                    <use href="img/icon/sprite.svg#modal-features-2-icon"></use>
-                  </svg>
+                  <img class="order-modal__features-item-img" src="img/image/order-features-2.png" width="32" height="32" aria-hidden="true">
                   <span class="order-modal__inner__features-item-text">Скидка 10% на первый заказ</span>
                 </div>
               </div>
             </label>
-
             <label class="order-modal__inner-label">Уточните подробности про заказ
-              <textarea class="order-modal__inner-text" name="order_text"></textarea>
+              <textarea class="order-modal__inner-textarea" name="order_text"></textarea>
             </label>
-
             <div class="feedback__form-attach">
               <ul class="feedback__form-attach-list base-list" id="order_attach_list"></ul>
               <div class="feedback__form-attach-info">
-                <button class="feedback__form-attach-button base-button" type="button" id="order_attach_button">
+                <button class="feedback__form-attach-button base-button" type="button" style="background-color: #F5F5F5;" id="order_attach_button">
                   <img src="img/image/attach-icon.png" width="30" height="30" aria-hidden="true">
                 </button>
                 <div class="feedback__form-attach-side">
@@ -68,16 +61,16 @@
                 </div>
               </div>
 
-              <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" name="order_files" id="order_attach_input" tabindex="-1" required>
+              <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" name="order_files" id="order_attach_input" tabindex="-1">
             </div>
-
-
+            <button class="order-modal__next order-modal__next--disabled base-button" disabled type="button">Далее</button>
           </div>
-          <div class="order-modal__inner-formset"></div>
-
+          <div class="order-modal__inner-formset order-modal__inner-formset--two"></div>
         </form>
       </div>
-      <div class="order-modal__success"></div>
+      <div class="order-modal__success">
+        <button class="order-modal__prev base-button" type="button">Назад</button>
+      </div>
     </div>
   </div>
 
@@ -107,11 +100,11 @@
                 Размер документа не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
               </span>
             </div>
-            <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" name="reviews_file" id="reviews_attach_input" tabindex="-1" required>
+            <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" name="reviews_file" id="reviews_attach_input" tabindex="-1">
           </div>
 
           <label class="reviews-modal__name reviews-modal__form-title">Ваше имя
-            <input class="reviews-modal__name-input" type="text" name="reviews_name">
+            <input class="reviews-modal__name-input" type="text" name="reviews_name" required>
           </label>
 
           <div class="reviews-modal__rating">

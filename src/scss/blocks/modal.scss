@@ -723,9 +723,138 @@
 
   &__inner-heading {
     display: flex;
-    align-items: flex-end;
+    align-items: baseline;
     justify-content: flex-start;
     gap: 26px;
+
+    margin: 0 0 42px 0;
+  }
+
+  &__inner-formset {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__inner-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #323648;
+  }
+
+  &__inner-steps {
+    font-size: 16px;
+    font-weight: 400;
+    color: #323648;
+  }
+
+  &__inner-label {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: #323648;
+
+    &:nth-child(1) {
+      margin: 0 0 46px 0;
+    }
+  }
+
+  &__inner-input {
+    flex-shrink: 0;
+
+    width: 566px;
+    height: 40px;
+    padding: 16px 15px;
+    border-radius: 8px;
+    border: 1px solid #BBB;
+    background: #FFF;
+
+    margin: 14px 0 19px 0;
+  }
+
+  &__inner-input,
+  .order-modal__inner-textarea {
+    font-family: var(--font-family-default);
+    font-size: 16px;
+    font-weight: 400;
+    color: #323648;
+
+    &:focus {
+      outline: 2px solid #0099FF;
+
+      transition: outline;
+    }
+  }
+
+  &__inner-label-features {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 21px;
+  }
+
+  &__features-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  &__features-item-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #323648;
+  }
+
+  &__inner-textarea {
+    height: 113px;
+
+    width: 487px;
+    border-radius: 8px;
+    border: 1px solid #BBB;
+    resize: none;
+
+    padding: 18px 16px;
+    margin: 14px 0 8px 0;
+  }
+
+  &__next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    background-color: #BF3025;
+    border-radius: 5px;
+
+    font-family: var(--font-family-default);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--color-white);
+
+    transition: background-color 0.2s, opacity 0.2s;
+
+    padding: 16px 41px;
+    margin: 46px 0 0 0;
+
+    &--disabled {
+      user-select: none;
+      pointer-events: none;
+      opacity: 50%;
+
+      transition: opacity 0.2s;
+    }
+
+    &:hover {
+      background-color: #0099FF;
+
+      transition: background-color 0.2s;
+    }
   }
 
   &__success {

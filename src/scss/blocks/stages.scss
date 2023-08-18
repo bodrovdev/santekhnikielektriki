@@ -44,11 +44,6 @@
 
         transition: color 0.2s;
       }
-
-      & .stages__item-image {
-        transform: scale(1.1);
-        transition: transform 0.2s;
-      }
     }
 
     &::after {
@@ -88,8 +83,6 @@
 
   &__item-image {
     align-self: flex-end;
-
-    transition: transform 0.2s;
 
     margin: 0 0 20px 0;
   }
