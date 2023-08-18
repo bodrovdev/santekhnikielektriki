@@ -13,12 +13,12 @@ window.addEventListener('load', () => {
 })
 
 // ? --- Ховер для кнопки в хедере
-let heading_input = document.querySelector('.heading__input');
-let heading_submit = document.querySelector('.heading__input-submit');
+// let heading_input = document.querySelector('.heading__input');
+// let heading_submit = document.querySelector('.heading__input-submit');
 
-heading_input.addEventListener('input', () => {
-  heading_submit.classList.toggle('heading__input-submit--disabled', heading_input.value === '')
-})
+// heading_input.addEventListener('input', () => {
+//   heading_submit.classList.toggle('heading__input-submit--disabled', heading_input.value === '')
+// })
 
 // ? --- Открытие и закрытие элементов услуг
 function removeStyle(item) {
@@ -89,9 +89,8 @@ let reviews_attach_element = function (source, value) {
   `
 }
 let reviews_attach_element_class = `reviews-modal__image-item`;
-(() => {
-  fileUpload(reviews_attach_input, reviews_attach_button, reviews_attach_block, reviews_attach_element, reviews_attach_element_class);
-})()
+
+fileUpload(reviews_attach_input, reviews_attach_button, reviews_attach_block, reviews_attach_element, reviews_attach_element_class);
 
 // ? --- Рейтинг в блоке с добавлением отзыва
 let rating_buttons = document.querySelectorAll('.reviews-modal__rating-button');
@@ -99,6 +98,9 @@ let current_active;
 
 rating_buttons.forEach(button => {
   button.addEventListener('click', () => {
+
+    document.querySelector('.reviews-modal__rating-input').value = button.dataset.rating;
+
     rating_buttons.forEach(button => {
       button.classList.remove('reviews-modal__rating-button--active');
     })
@@ -131,3 +133,21 @@ rating_buttons.forEach(button => {
     }
   })
 })
+
+// ? --- Загрузка файлов в блоке с оформлением заказа
+let order_attach_input = document.getElementById('order_attach_input');
+let order_attach_button = document.getElementById('order_attach_button');
+let order_attach_block = document.getElementById('order_attach_list');
+let order_attach_element = function (source, value) {
+  return `
+  <li class="feedback__form-attach-item">
+    <button class="feedback__form-attach-cancel base-button" type="button" data-name="${value.name}"></button>
+    <a class="base-link" href="${source}" data-fancybox>
+      <img class="feedback__form-attach-img" src="${source}" width="40" height="40" alt="${value.name}">
+    </a>
+  </li>
+  `
+}
+let order_attach_element_class = `feedback__form-attach-item`;
+
+fileUpload(order_attach_input, order_attach_button, order_attach_block, order_attach_element, order_attach_element_class);

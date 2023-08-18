@@ -16,19 +16,70 @@
 
 <body style="opacity: 0">
 
-  <!-- <div class="modal-with-form" id="modal_with_form">
-    <div class="modal-with-form__wrapper">
-      <button class="modal-with-form__close follow-change base-button" id="modal_with_form_close">
-        <svg class="modal-with-form__close-icon" width="20" height="20" alt="#">
+  <div class="order-modal">
+    <div class="order-modal__wrapper">
+      <button class="order-modal__close base-button">
+        <svg class="order-modal__close-icon" width="16" height="16" aria-hidden="true">
           <use href="img/icon/sprite.svg#modal-close-icon"></use>
         </svg>
       </button>
-      <div class="modal-with-form__inner"></div>
-      <div class="modal-with-form__success">
-        <span class="modal-with-form__success-text">Спасибо, ваша заявка отправлена!</span>
+      <div class="order-modal__inner">
+        <div class="order-modal__inner-heading">
+          <h2 class="order-modal__inner-title base-title">Оформление услуги</h2>
+          <span class="order-modal__inner-steps">шаг: <span>1</span> из 2</span>
+        </div>
+        <form class="order-modal__inner-body order-modal__form" id="order_modal_form">
+          <div class="order-modal__inner-formset">
+
+            <label class="order-modal__inner-label">Что нужно сделать?
+              <input class="order-modal__inner-input order-modal__inner-input--work" type="text" name="order_work">
+              <div class="order-modal__inner-label-features">
+                <div class="order-modal__features-item">
+                  <svg class="order-modal__inner__features-item-icon" width="32" height="32" aria-hidden="true">
+                    <use href="img/icon/sprite.svg#modal-features-1-icon"></use>
+                  </svg>
+                  <span class="order-modal__inner__features-item-text">Бесплатный выезд</span>
+                </div>
+                <div class="order-modal__features-item">
+                  <svg class="order-modal__inner__features-item-icon" width="32" height="32" aria-hidden="true">
+                    <use href="img/icon/sprite.svg#modal-features-2-icon"></use>
+                  </svg>
+                  <span class="order-modal__inner__features-item-text">Скидка 10% на первый заказ</span>
+                </div>
+              </div>
+            </label>
+
+            <label class="order-modal__inner-label">Уточните подробности про заказ
+              <textarea class="order-modal__inner-text" name="order_text"></textarea>
+            </label>
+
+            <div class="feedback__form-attach">
+              <ul class="feedback__form-attach-list base-list" id="order_attach_list"></ul>
+              <div class="feedback__form-attach-info">
+                <button class="feedback__form-attach-button base-button" type="button" id="order_attach_button">
+                  <img src="img/image/attach-icon.png" width="30" height="30" aria-hidden="true">
+                </button>
+                <div class="feedback__form-attach-side">
+                  <h3 class="feedback__form-attach-side-title base-title">Прикрепить фотографии</h3>
+                  <span class="feedback__form-attach-side-text">
+                    Не больше 10 файлов.<br>
+                    Размер файла не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
+                  </span>
+                </div>
+              </div>
+
+              <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" name="order_files" id="order_attach_input" tabindex="-1" required>
+            </div>
+
+
+          </div>
+          <div class="order-modal__inner-formset"></div>
+
+        </form>
       </div>
+      <div class="order-modal__success"></div>
     </div>
-  </div> -->
+  </div>
 
   <div class="reviews-modal">
     <div class="reviews-modal__wrapper">
@@ -56,11 +107,11 @@
                 Размер документа не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
               </span>
             </div>
-            <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" id="reviews_attach_input" tabindex="-1" required>
+            <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" name="reviews_file" id="reviews_attach_input" tabindex="-1" required>
           </div>
 
           <label class="reviews-modal__name reviews-modal__form-title">Ваше имя
-            <input class="reviews-modal__name-input" type="text" name="name">
+            <input class="reviews-modal__name-input" type="text" name="reviews_name">
           </label>
 
           <div class="reviews-modal__rating">
@@ -72,11 +123,11 @@
               <button class="reviews-modal__rating-button base-button" type="button" data-rating="4" aria-label="Четыре звезды"></button>
               <button class="reviews-modal__rating-button base-button" type="button" data-rating="5" aria-label="Пять звёзд"></button>
             </div>
-            <input class="reviews-modal__rating-input visually-hidden" type="text" name="rating" value="1" aria-hidden="true" required>
+            <input class="reviews-modal__rating-input visually-hidden" type="text" name="reviews_rating" value="1" aria-hidden="true" required>
           </div>
 
           <label class="reviews-modal__text reviews-modal__form-title">Отзыв
-            <textarea class="reviews-modal__text-textarea" name="text"></textarea>
+            <textarea class="reviews-modal__text-textarea" name="reviews_text"></textarea>
           </label>
 
           <button class="reviews-modal__submit base-button" type="submit">Отправить</button>
@@ -117,9 +168,9 @@
             </svg>
             <span class="main-nav__mobile-menu-phone-text">+7 937 172 - 23-35</span>
           </a>
-          <button class="main-nav__mobile-menu-button modal-with-form-button base-button" type="button">
+          <a class="main-nav__mobile-menu-button order-modal-button base-link" href="#feedback">
             Заказать звонок
-          </button>
+          </a>
         </div>
         <button class="main-nav__burger base-button" id="burger">
           <span class="main-nav__burger-line"></span>
