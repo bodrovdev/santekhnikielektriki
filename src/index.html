@@ -46,7 +46,7 @@
     </div>
   </section>
 
-  <section class="services">
+  <section class="services" id="services">
     <div class="services__container base-container">
       <h2 class="services__title section-title base-title">Услуги</h2>
       <div class="services__wrapper">
@@ -65,7 +65,9 @@
 
           <div class="services__item-pricing">
             <div class="services__item-pricing-item">
-              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-name">
+                Устранение течи в трубах
+              </span>
               <span class="services__item-pricing-price">от <span>500</span> ₽</span>
             </div>
             <div class="services__item-pricing-item">
@@ -227,40 +229,42 @@
   <section class="stages">
     <div class="stages__container base-container">
       <h2 class="stages__title section-title base-title">Этапы работы</h2>
-      <div class="stages__wrapper">
-        <div class="stages__item">
-          <span class="stages__item-num">1</span>
-          <figure class="stages__item-image base-figure">
-            <img class="stages__item-img" src="img/image/stages1.png" width="149" alt="#">
-          </figure>
-          <span class="stages__item-text">Оставляете заявку на сайте или по телефону</span>
-        </div>
-        <div class="stages__item">
-          <span class="stages__item-num">2</span>
-          <figure class="stages__item-image base-figure">
-            <img class="stages__item-img" src="img/image/stages2.png" width="149" alt="#">
-          </figure>
-          <span class="stages__item-text">Мастер приедет в назначенное время и выполнит все работы</span>
-        </div>
-        <div class="stages__item">
-          <span class="stages__item-num">3</span>
-          <figure class="stages__item-image base-figure">
-            <img class="stages__item-img" src="img/image/stages3.png" width="149" alt="#">
-          </figure>
-          <span class="stages__item-text">Оплачиваете удобным для вас способом</span>
-        </div>
-        <div class="stages__item">
-          <span class="stages__item-num">4</span>
-          <figure class="stages__item-image base-figure">
-            <img class="stages__item-img" src="img/image/stages4.png" width="149" alt="#">
-          </figure>
-          <span class="stages__item-text">Получаете гарантию 1 год на выполненные работы</span>
+      <div class="stages__wrapper stages-slider swiper">
+        <div class="stages__swiper-wrapper swiper-wrapper">
+          <div class="stages__item stages__slide swiper-slide">
+            <span class="stages__item-num">1</span>
+            <figure class="stages__item-image base-figure">
+              <img class="stages__item-img" src="img/image/stages1.png" width="149" alt="#">
+            </figure>
+            <span class="stages__item-text">Оставляете заявку на сайте или по телефону</span>
+          </div>
+          <div class="stages__item stages__slide swiper-slide">
+            <span class="stages__item-num">2</span>
+            <figure class="stages__item-image base-figure">
+              <img class="stages__item-img" src="img/image/stages2.png" width="149" alt="#">
+            </figure>
+            <span class="stages__item-text">Мастер приедет в назначенное время и выполнит все работы</span>
+          </div>
+          <div class="stages__item stages__slide swiper-slide">
+            <span class="stages__item-num">3</span>
+            <figure class="stages__item-image base-figure">
+              <img class="stages__item-img" src="img/image/stages3.png" width="149" alt="#">
+            </figure>
+            <span class="stages__item-text">Оплачиваете удобным для вас способом</span>
+          </div>
+          <div class="stages__item stages__slide swiper-slide">
+            <span class="stages__item-num">4</span>
+            <figure class="stages__item-image base-figure">
+              <img class="stages__item-img" src="img/image/stages4.png" width="149" alt="#">
+            </figure>
+            <span class="stages__item-text">Получаете гарантию 1 год на выполненные работы</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="features">
+  <section class="features" style="overflow-x: hidden;">
     <div class="features__container base-container">
       <h2 class="features__title section-title base-title">Преимущества</h2>
       <div class="features__wrapper">
@@ -301,7 +305,7 @@
     </div>
   </section>
 
-  <section class="reviews">
+  <section class="reviews" style="overflow-x: hidden;" id="reviews">
     <div class="reviews__container base-container">
       <h2 class="reviews__title section-title base-title">Отзывы</h2>
       <span class="reviews__subtitle">Оставьте отзыв и получите скидку 10%</span>
@@ -577,7 +581,7 @@
     </div>
   </section>
 
-  <section class="feedback" id="feedback">
+  <section class="feedback" style="overflow-x: hidden;" id="feedback">
     <div class="feedback__container base-container">
       <div class="feedback__column">
         <h2 class="feedback__column-title base-title">Оставьте заявку и мы подберем<br> специалиста для выполнения работ</h2>

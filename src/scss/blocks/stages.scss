@@ -22,7 +22,9 @@
 
     width: 100%;
 
-    @include mixins.respond-to(notDesktop) {}
+    @include mixins.respond-to(notDesktop) {
+      flex-direction: column;
+    }
   }
 
   &__item {

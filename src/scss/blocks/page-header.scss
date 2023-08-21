@@ -4,4 +4,8 @@
   flex-shrink: 0;
 
   margin: 0 0 16px 0;
+
+  @include mixins.respond-to(notDesktop) {
+    margin: 0;
+  }
 }

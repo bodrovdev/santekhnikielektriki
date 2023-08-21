@@ -4,6 +4,10 @@
 
   margin: 70px 0 0 0;
 
+  @include mixins.respond-to(notDesktop) {
+    margin: 40px 0;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -57,6 +61,10 @@
 
       & .services__item-pricing {
         display: grid;
+
+        @include mixins.respond-to(notDesktop) {
+          display: flex;
+        }
       }
     }
   }
@@ -74,6 +82,15 @@
     background-color: #F5F5F5;
 
     padding: 40px 40px 25px 40px;
+
+    @include mixins.respond-to(notDesktop) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 20px;
+
+      padding: 40px 10px 15px 10px;
+    }
   }
 
   &__item-pricing-item {
@@ -84,6 +101,16 @@
     border-bottom: 1px dashed#BBB;
 
     padding: 19px 48px 15px 0;
+
+    @include mixins.respond-to(notDesktop) {
+      justify-content: space-between;
+      gap: 20px;
+
+      width: 100%;
+      max-width: 100%;
+
+      padding: 0 0 15px 0;
+    }
   }
 
   &__item-pricing-name {
@@ -93,6 +120,8 @@
   }
 
   &__item-pricing-price {
+    flex-shrink: 0;
+
     font-size: 16px;
     font-weight: 600;
     color: #323648;
@@ -160,6 +189,12 @@
     font-size: 18px;
     font-weight: 500;
     color: #323648;
+
+    @include mixins.respond-to(notDesktop) {
+      display: inline-block;
+
+      max-width: 200px;
+    }
   }
 
   &__item-card-bottom {
@@ -175,6 +210,11 @@
     font-size: 16px;
     font-weight: 400;
     color: #323648;
+
+    @include mixins.respond-to(notDesktop) {
+      font-size: 20px;
+      font-weight: 500;
+    }
   }
 
   &__item-card-button {

@@ -151,7 +151,3 @@ let order_attach_element = function (source, value) {
 let order_attach_element_class = `feedback__form-attach-item`;
 
 fileUpload(order_attach_input, order_attach_button, order_attach_block, order_attach_element, order_attach_element_class);
-
-window.addEventListener('click', (e) => {
-  console.log(e.target);
-})

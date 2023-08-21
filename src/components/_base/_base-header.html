@@ -18,7 +18,7 @@
 
   <div class="order-modal">
     <div class="order-modal__wrapper">
-      <button class="order-modal__close base-button">
+      <button class="order-modal__close order-modal__close-button base-button">
         <svg class="order-modal__close-icon" width="16" height="16" aria-hidden="true">
           <use href="img/icon/sprite.svg#modal-close-icon"></use>
         </svg>
@@ -29,7 +29,7 @@
           <span class="order-modal__inner-steps">шаг: <span>1</span> из 2</span>
         </div>
         <form class="order-modal__inner-body order-modal__form" id="order_modal_form">
-          <div class="order-modal__inner-formset order-modal__inner-formset--active order-modal__inner-formset--one">
+          <div class="order-modal__inner-formset order-modal__inner-formset--one order-modal__inner-formset--active">
             <label class="order-modal__inner-label">Что нужно сделать?
               <input class="order-modal__inner-input order-modal__inner-input--work" type="text" name="order_work" required>
               <div class="order-modal__inner-label-features">
@@ -60,16 +60,62 @@
                   </span>
                 </div>
               </div>
-
               <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" name="order_files" id="order_attach_input" tabindex="-1">
             </div>
             <button class="order-modal__next order-modal__next--disabled base-button" disabled type="button">Далее</button>
           </div>
-          <div class="order-modal__inner-formset order-modal__inner-formset--two"></div>
+          <div class="order-modal__inner-formset order-modal__inner-formset--two">
+            <span class="order-modal__inner-formset-info">Уточните место, время проведения работ и контактные данные</span>
+            <div class="order-modal__inner-formset-inputs order-modal__inner-formset-inputs--one">
+              <input class="order-modal__inputs-item" type="text" name="order_name" placeholder="Имя" required>
+              <input class="order-modal__inputs-item" type="tel" name="order_phone" placeholder="Телефон" required>
+            </div>
+            <div class="order-modal__inner-formset-inputs order-modal__inner-formset-inputs--two">
+              <input class="order-modal__inputs-item" type="text" name="order_address" placeholder="Введите адрес" required>
+              <input class="order-modal__inputs-item" type="text" name="order_home" placeholder="дом, корпус">
+              <input class="order-modal__inputs-item" type="text" name="order_apart" placeholder="картира">
+            </div>
+            <div class="order-modal__inner-formset-select">
+              <span class="order-modal__select-shown">
+                <span style="font-size:16px;font-weight:400;color:#BBB">
+                  Введите дату и время проведения работ
+                </span>
+              </span>
+              <ul class="order-modal__select-list base-list">
+                <li class="order-modal__select-list-item" data-value="Срочно">
+                  Срочно - мастер будет у вас в течении 15 минут
+                </li>
+                <li class="order-modal__select-list-item" data-value="Не срочно">
+                  Не срочно - выберите удобную для вас дату и время
+                </li>
+              </ul>
+              <svg class="order-modal__select-arrow" width="15" height="6" aria-hidden="true">
+                <use href="img/icon/sprite.svg#select-arrow-icon"></use>
+              </svg>
+              <input class="order-modal__select-input visually-hidden" type="text" name="order_speed" required>
+            </div>
+            <input class="order-modal__inner-formset-date visually-hidden" type="text" name="order_date" placeholder="Введите дату и время проведения работ">
+            <textarea class="order-modal__inner-formset-textarea" name="order_tip" placeholder="Примечания для мастера"></textarea>
+            <div class="order-modal__inner-formset-controls">
+              <button class="order-modal__prev blue-hover base-button" type="button">Назад</button>
+              <button class="order-modal__controls-submit blue-hover base-button" type="submit">Оставить заявку</button>
+            </div>
+            <div class="feedback__form-personal">
+              <p><span style="color:#BF3025">*</span> Нажимая кнопку «Оставить заявку», Вы даете свое <a href="#">согласие на обработку персональных данных</a></p>
+            </div>
+          </div>
         </form>
       </div>
       <div class="order-modal__success">
-        <button class="order-modal__prev base-button" type="button">Назад</button>
+        <h2 class="order-modal__success-title base-title">Спасибо, Ваш заказ принят!</h2>
+        <p class="order-modal__success-text base-par">
+          Ваш заказ успешно оформлен.<br>
+          Мы свяжемся с вами в ближайшее время.
+        </p>
+        <button class="order-modal__success-button order-modal__close-button base-button" type="button">На главную</button>
+        <figure class="order-modal__success-image base-figure">
+          <img class="order-modal__success-img" src="img/image/feedback-img.png" width="202" height="342" aria-hidden="true">
+        </figure>
       </div>
     </div>
   </div>
