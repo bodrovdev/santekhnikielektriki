@@ -16,19 +16,109 @@
 
 <body style="opacity: 0">
 
-  <!-- <div class="modal-with-form" id="modal_with_form">
-    <div class="modal-with-form__wrapper">
-      <button class="modal-with-form__close follow-change base-button" id="modal_with_form_close">
-        <svg class="modal-with-form__close-icon" width="20" height="20" alt="#">
+  <div class="order-modal">
+    <div class="order-modal__wrapper">
+      <button class="order-modal__close order-modal__close-button base-button">
+        <svg class="order-modal__close-icon" width="16" height="16" aria-hidden="true">
           <use href="img/icon/sprite.svg#modal-close-icon"></use>
         </svg>
       </button>
-      <div class="modal-with-form__inner"></div>
-      <div class="modal-with-form__success">
-        <span class="modal-with-form__success-text">Спасибо, ваша заявка отправлена!</span>
+      <div class="order-modal__inner">
+        <div class="order-modal__inner-heading">
+          <h2 class="order-modal__inner-title base-title">Оформление услуги</h2>
+          <span class="order-modal__inner-steps">шаг: <span>1</span> из 2</span>
+        </div>
+        <form class="order-modal__inner-body order-modal__form" id="order_modal_form">
+          <div class="order-modal__inner-formset order-modal__inner-formset--one order-modal__inner-formset--active">
+            <label class="order-modal__inner-label">Что нужно сделать?
+              <input class="order-modal__inner-input order-modal__inner-input--work" type="text" name="order_work" required>
+              <div class="order-modal__inner-label-features">
+                <div class="order-modal__features-item">
+                  <img class="order-modal__features-item-img" src="img/image/order-features-1.png" width="32" height="32" aria-hidden="true">
+                  <span class="order-modal__inner__features-item-text">Бесплатный выезд</span>
+                </div>
+                <div class="order-modal__features-item">
+                  <img class="order-modal__features-item-img" src="img/image/order-features-2.png" width="32" height="32" aria-hidden="true">
+                  <span class="order-modal__inner__features-item-text">Скидка 10% на первый заказ</span>
+                </div>
+              </div>
+            </label>
+            <label class="order-modal__inner-label">Уточните подробности про заказ
+              <textarea class="order-modal__inner-textarea" name="order_text"></textarea>
+            </label>
+            <div class="feedback__form-attach">
+              <ul class="feedback__form-attach-list base-list" id="order_attach_list"></ul>
+              <div class="feedback__form-attach-info">
+                <button class="feedback__form-attach-button base-button" type="button" style="background-color: #F5F5F5;" id="order_attach_button">
+                  <img src="img/image/attach-icon.png" width="30" height="30" aria-hidden="true">
+                </button>
+                <div class="feedback__form-attach-side">
+                  <h3 class="feedback__form-attach-side-title base-title">Прикрепить фотографии</h3>
+                  <span class="feedback__form-attach-side-text">
+                    Не больше 10 файлов.<br>
+                    Размер файла не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
+                  </span>
+                </div>
+              </div>
+              <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" name="order_files" id="order_attach_input" tabindex="-1">
+            </div>
+            <button class="order-modal__next order-modal__next--disabled base-button" disabled type="button">Далее</button>
+          </div>
+          <div class="order-modal__inner-formset order-modal__inner-formset--two">
+            <span class="order-modal__inner-formset-info">Уточните место, время проведения работ и контактные данные</span>
+            <div class="order-modal__inner-formset-inputs order-modal__inner-formset-inputs--one">
+              <input class="order-modal__inputs-item" type="text" name="order_name" placeholder="Имя" required>
+              <input class="order-modal__inputs-item" type="tel" name="order_phone" placeholder="Телефон" required>
+            </div>
+            <div class="order-modal__inner-formset-inputs order-modal__inner-formset-inputs--two">
+              <input class="order-modal__inputs-item" type="text" name="order_address" placeholder="Введите адрес" required>
+              <input class="order-modal__inputs-item" type="text" name="order_home" placeholder="дом, корпус">
+              <input class="order-modal__inputs-item" type="text" name="order_apart" placeholder="картира">
+            </div>
+            <div class="order-modal__inner-formset-select">
+              <span class="order-modal__select-shown">
+                <span style="font-size:16px;font-weight:400;color:#BBB">
+                  Введите дату и время проведения работ
+                </span>
+              </span>
+              <ul class="order-modal__select-list base-list">
+                <li class="order-modal__select-list-item" data-value="Срочно">
+                  Срочно - мастер будет у вас в течении 15 минут
+                </li>
+                <li class="order-modal__select-list-item" data-value="Не срочно">
+                  Не срочно - выберите удобную для вас дату и время
+                </li>
+              </ul>
+              <svg class="order-modal__select-arrow" width="15" height="6" aria-hidden="true">
+                <use href="img/icon/sprite.svg#select-arrow-icon"></use>
+              </svg>
+              <input class="order-modal__select-input visually-hidden" type="text" name="order_speed" required>
+            </div>
+            <input class="order-modal__inner-formset-date visually-hidden" type="text" name="order_date" placeholder="Введите дату и время проведения работ">
+            <textarea class="order-modal__inner-formset-textarea" name="order_tip" placeholder="Примечания для мастера"></textarea>
+            <div class="order-modal__inner-formset-controls">
+              <button class="order-modal__prev blue-hover base-button" type="button">Назад</button>
+              <button class="order-modal__controls-submit blue-hover base-button" type="submit">Оставить заявку</button>
+            </div>
+            <div class="feedback__form-personal">
+              <p><span style="color:#BF3025">*</span> Нажимая кнопку «Оставить заявку», Вы даете свое <a href="#">согласие на обработку персональных данных</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="order-modal__success">
+        <h2 class="order-modal__success-title base-title">Спасибо, Ваш заказ принят!</h2>
+        <p class="order-modal__success-text base-par">
+          Ваш заказ успешно оформлен.<br>
+          Мы свяжемся с вами в ближайшее время.
+        </p>
+        <button class="order-modal__success-button order-modal__close-button base-button" type="button">На главную</button>
+        <figure class="order-modal__success-image base-figure">
+          <img class="order-modal__success-img" src="img/image/feedback-img.png" width="202" height="342" aria-hidden="true">
+        </figure>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <div class="reviews-modal">
     <div class="reviews-modal__wrapper">
@@ -56,11 +146,11 @@
                 Размер документа не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
               </span>
             </div>
-            <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" id="reviews_attach_input" tabindex="-1" required>
+            <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" name="reviews_file" id="reviews_attach_input" tabindex="-1">
           </div>
 
           <label class="reviews-modal__name reviews-modal__form-title">Ваше имя
-            <input class="reviews-modal__name-input" type="text" name="name">
+            <input class="reviews-modal__name-input" type="text" name="reviews_name" required>
           </label>
 
           <div class="reviews-modal__rating">
@@ -72,11 +162,11 @@
               <button class="reviews-modal__rating-button base-button" type="button" data-rating="4" aria-label="Четыре звезды"></button>
               <button class="reviews-modal__rating-button base-button" type="button" data-rating="5" aria-label="Пять звёзд"></button>
             </div>
-            <input class="reviews-modal__rating-input visually-hidden" type="text" name="rating" value="1" aria-hidden="true" required>
+            <input class="reviews-modal__rating-input visually-hidden" type="text" name="reviews_rating" value="1" aria-hidden="true" required>
           </div>
 
           <label class="reviews-modal__text reviews-modal__form-title">Отзыв
-            <textarea class="reviews-modal__text-textarea" name="text"></textarea>
+            <textarea class="reviews-modal__text-textarea" name="reviews_text"></textarea>
           </label>
 
           <button class="reviews-modal__submit base-button" type="submit">Отправить</button>
@@ -117,9 +207,9 @@
             </svg>
             <span class="main-nav__mobile-menu-phone-text">+7 937 172 - 23-35</span>
           </a>
-          <button class="main-nav__mobile-menu-button modal-with-form-button base-button" type="button">
+          <a class="main-nav__mobile-menu-button order-modal-button base-link" href="#feedback">
             Заказать звонок
-          </button>
+          </a>
         </div>
         <button class="main-nav__burger base-button" id="burger">
           <span class="main-nav__burger-line"></span>
@@ -142,7 +232,7 @@
               <use href="img/icon/sprite.svg#search-icon"></use>
             </svg>
             <input class="heading__input" type="text">
-            <button class="heading__input-submit heading__input-submit--disabled hover-blue base-button">
+            <button class="heading__input-submit hover-blue base-button">
               Оформить заказ
             </button>
           </div>
@@ -176,7 +266,7 @@
     </div>
   </section>
 
-  <section class="services">
+  <section class="services" id="services">
     <div class="services__container base-container">
       <h2 class="services__title section-title base-title">Услуги</h2>
       <div class="services__wrapper">
@@ -195,7 +285,9 @@
 
           <div class="services__item-pricing">
             <div class="services__item-pricing-item">
-              <span class="services__item-pricing-name">Устранение течи в трубах</span>
+              <span class="services__item-pricing-name">
+                Устранение течи в трубах
+              </span>
               <span class="services__item-pricing-price">от <span>500</span> ₽</span>
             </div>
             <div class="services__item-pricing-item">
@@ -357,40 +449,42 @@
   <section class="stages">
     <div class="stages__container base-container">
       <h2 class="stages__title section-title base-title">Этапы работы</h2>
-      <div class="stages__wrapper">
-        <div class="stages__item">
-          <span class="stages__item-num">1</span>
-          <figure class="stages__item-image base-figure">
-            <img class="stages__item-img" src="img/image/stages1.png" width="149" alt="#">
-          </figure>
-          <span class="stages__item-text">Оставляете заявку на сайте или по телефону</span>
-        </div>
-        <div class="stages__item">
-          <span class="stages__item-num">2</span>
-          <figure class="stages__item-image base-figure">
-            <img class="stages__item-img" src="img/image/stages2.png" width="149" alt="#">
-          </figure>
-          <span class="stages__item-text">Мастер приедет в назначенное время и выполнит все работы</span>
-        </div>
-        <div class="stages__item">
-          <span class="stages__item-num">3</span>
-          <figure class="stages__item-image base-figure">
-            <img class="stages__item-img" src="img/image/stages3.png" width="149" alt="#">
-          </figure>
-          <span class="stages__item-text">Оплачиваете удобным для вас способом</span>
-        </div>
-        <div class="stages__item">
-          <span class="stages__item-num">4</span>
-          <figure class="stages__item-image base-figure">
-            <img class="stages__item-img" src="img/image/stages4.png" width="149" alt="#">
-          </figure>
-          <span class="stages__item-text">Получаете гарантию 1 год на выполненные работы</span>
+      <div class="stages__wrapper stages-slider swiper">
+        <div class="stages__swiper-wrapper swiper-wrapper">
+          <div class="stages__item stages__slide swiper-slide">
+            <span class="stages__item-num">1</span>
+            <figure class="stages__item-image base-figure">
+              <img class="stages__item-img" src="img/image/stages1.png" width="149" alt="#">
+            </figure>
+            <span class="stages__item-text">Оставляете заявку на сайте или по телефону</span>
+          </div>
+          <div class="stages__item stages__slide swiper-slide">
+            <span class="stages__item-num">2</span>
+            <figure class="stages__item-image base-figure">
+              <img class="stages__item-img" src="img/image/stages2.png" width="149" alt="#">
+            </figure>
+            <span class="stages__item-text">Мастер приедет в назначенное время и выполнит все работы</span>
+          </div>
+          <div class="stages__item stages__slide swiper-slide">
+            <span class="stages__item-num">3</span>
+            <figure class="stages__item-image base-figure">
+              <img class="stages__item-img" src="img/image/stages3.png" width="149" alt="#">
+            </figure>
+            <span class="stages__item-text">Оплачиваете удобным для вас способом</span>
+          </div>
+          <div class="stages__item stages__slide swiper-slide">
+            <span class="stages__item-num">4</span>
+            <figure class="stages__item-image base-figure">
+              <img class="stages__item-img" src="img/image/stages4.png" width="149" alt="#">
+            </figure>
+            <span class="stages__item-text">Получаете гарантию 1 год на выполненные работы</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="features">
+  <section class="features" style="overflow-x: hidden;">
     <div class="features__container base-container">
       <h2 class="features__title section-title base-title">Преимущества</h2>
       <div class="features__wrapper">
@@ -431,7 +525,7 @@
     </div>
   </section>
 
-  <section class="reviews">
+  <section class="reviews" style="overflow-x: hidden;" id="reviews">
     <div class="reviews__container base-container">
       <h2 class="reviews__title section-title base-title">Отзывы</h2>
       <span class="reviews__subtitle">Оставьте отзыв и получите скидку 10%</span>
@@ -707,7 +801,7 @@
     </div>
   </section>
 
-  <section class="feedback">
+  <section class="feedback" style="overflow-x: hidden;" id="feedback">
     <div class="feedback__container base-container">
       <div class="feedback__column">
         <h2 class="feedback__column-title base-title">Оставьте заявку и мы подберем<br> специалиста для выполнения работ</h2>
@@ -734,7 +828,7 @@
               </div>
             </div>
 
-            <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" id="feedback_attach_input" tabindex="-1" required>
+            <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" name="feedback_files" id="feedback_attach_input" tabindex="-1" required>
           </div>
 
           <button class="feedback__form-submit base-button">Оставить заявку</button>
@@ -751,7 +845,7 @@
   </section>
 </main>
 
-<footer class="page-footer">
+<footer class="page-footer" style="overflow-x: hidden;">
   <section class="footer-top">
     <div class="footer-top__container base-container">
       <a class="footer-top__logo-link base-link" href="index.html">
@@ -774,7 +868,7 @@
           <a class="footer-top__list-link base-link" href="#">Отзывы</a>
         </li>
       </ul>
-      <div class="footer-top__contacts">
+      <div class="footer-top__contacts" id="contacts">
         <h3 class="footer-top__contacts-title base-title">Контакты</h3>
         <ul class="footer-top__contacts-list base-list">
           <li class="footer-top__contacts-list-item">
