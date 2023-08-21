@@ -8,9 +8,9 @@ window.addEventListener('load', () => {
 })
 
 // ? --- Показать страницу только после загрузки
-window.addEventListener('load', () => {
-  document.body.removeAttribute('style');
-})
+// window.addEventListener('load', () => {
+//   document.body.removeAttribute('style');
+// })
 
 // ? --- Ховер для кнопки в хедере
 // let heading_input = document.querySelector('.heading__input');

@@ -32,13 +32,12 @@ body {
 	margin: 0 !important;
 
 	// ? отключаем скроллбар
+	// -ms-overflow-style: none;
+	// scrollbar-width: none;
 
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
+	// &::-webkit-scrollbar {
+	// 	display: none;
+	// }
 
 	&::before {
 		content: "";
