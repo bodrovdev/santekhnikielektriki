@@ -63,15 +63,25 @@ let order_modal_formset_one = document.querySelector('.order-modal__inner-formse
 let order_modal_formset_two = document.querySelector('.order-modal__inner-formset--two');
 
 document.querySelector('.order-modal__inner-input--work').addEventListener('input', () => {
-  document.querySelector('.order-modal__inner-input--work') !== '' ?
-    (() => {
-      order_modal_next.classList.remove('order-modal__next--disabled');
-      order_modal_next.removeAttribute('disabled');
-    })() :
-    (() => {
-      order_modal_next.classList.add('order-modal__next--disabled');
-      order_modal_next.setAttribute('disabled', 'disabled');
-    })();
+
+  if (document.querySelector('.order-modal__inner-input--work').value !== '') {
+    order_modal_next.classList.remove('order-modal__next--disabled');
+    order_modal_next.removeAttribute('disabled');
+  }
+  else {
+    order_modal_next.classList.add('order-modal__next--disabled');
+    order_modal_next.setAttribute('disabled', 'disabled');
+  }
+
+  // document.querySelector('.order-modal__inner-input--work') !== '' ?
+  //   (() => {
+  //     order_modal_next.classList.remove('order-modal__next--disabled');
+  //     order_modal_next.removeAttribute('disabled');
+  //   })() :
+  //   (() => {
+  //     order_modal_next.classList.add('order-modal__next--disabled');
+  //     order_modal_next.setAttribute('disabled', 'disabled');
+  //   })();
 })
 
 order_modal_next.addEventListener('click', () => {

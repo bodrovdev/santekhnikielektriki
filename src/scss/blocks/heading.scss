@@ -27,7 +27,7 @@
     background-size: cover;
     border-radius: 16px;
 
-    padding: 100px 100px 130px 100px;
+    padding: 97px 100px 112px 100px;
 
     @include mixins.respond-to(notDesktop) {
       background-image: none;
@@ -43,7 +43,7 @@
     font-weight: 500;
     color: var(--color-white);
 
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
 
     @include mixins.respond-to(notDesktop) {
       font-size: 35px;
@@ -59,7 +59,7 @@
     font-weight: 400;
     color: var(--color-white);
 
-    margin: 0 0 26px 0;
+    margin: 0 0 38px 0;
 
     @include mixins.respond-to(notDesktop) {
       font-size: 18px;
@@ -74,7 +74,7 @@
     align-items: center;
     justify-content: center;
 
-    margin: 0 0 39px 0;
+    margin: 0 0 42px 0;
 
     @include mixins.respond-to(notDesktop) {
       margin: 0 0 20px 0;

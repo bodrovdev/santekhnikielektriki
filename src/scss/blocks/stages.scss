@@ -14,16 +14,18 @@
     margin: 0 0 31px 0;
   }
 
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+  &__swiper {
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
 
-    width: 100%;
+      width: 100%;
 
-    @include mixins.respond-to(notDesktop) {
-      flex-direction: column;
+      @include mixins.respond-to(notDesktop) {
+        flex-direction: column;
+      }
     }
   }
 
@@ -94,7 +96,7 @@
 
     max-width: 270px;
 
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: #323648;
   }
