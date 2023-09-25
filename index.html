@@ -1,224 +1,233 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="format-detection" content="date=no">
-  <meta name="format-detection" content="address=no">
-  <meta name="format-detection" content="email=no">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="date=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="format-detection" content="email=no">
 
-  <link href="css/style.min.css?v=1.0" rel="stylesheet">
-  <title></title>
-</head>
+		<link href="css/style.min.css?v=1.0" rel="stylesheet">
+		<title></title>
+	</head>
 
-<body>
+	<body>
 
-  <div class="order-modal">
-    <div class="order-modal__wrapper">
-      <button class="order-modal__close order-modal__close-button base-button">
-        <svg class="order-modal__close-icon" width="16" height="16" aria-hidden="true">
-          <use href="img/icon/sprite.svg#modal-close-icon"></use>
-        </svg>
-      </button>
-      <div class="order-modal__inner">
-        <div class="order-modal__inner-heading">
-          <h2 class="order-modal__inner-title base-title">Оформление услуги</h2>
-          <span class="order-modal__inner-steps">шаг: <span>1</span> из 2</span>
-        </div>
-        <form class="order-modal__inner-body order-modal__form" id="order_modal_form">
-          <div class="order-modal__inner-formset order-modal__inner-formset--one order-modal__inner-formset--active">
-            <label class="order-modal__inner-label">Что нужно сделать?
-              <input class="order-modal__inner-input order-modal__inner-input--work" type="text" name="order_work" required>
-              <div class="order-modal__inner-label-features">
-                <div class="order-modal__features-item">
-                  <img class="order-modal__features-item-img" src="img/image/order-features-1.png" width="32" height="32" aria-hidden="true">
-                  <span class="order-modal__inner__features-item-text">Бесплатный выезд</span>
-                </div>
-                <div class="order-modal__features-item">
-                  <img class="order-modal__features-item-img" src="img/image/order-features-2.png" width="32" height="32" aria-hidden="true">
-                  <span class="order-modal__inner__features-item-text">Скидка 10% на первый заказ</span>
-                </div>
-              </div>
-            </label>
-            <label class="order-modal__inner-label">Уточните подробности про заказ
-              <textarea class="order-modal__inner-textarea" name="order_text"></textarea>
-            </label>
-            <div class="feedback__form-attach">
-              <ul class="feedback__form-attach-list base-list" id="order_attach_list"></ul>
-              <div class="feedback__form-attach-info">
-                <button class="feedback__form-attach-button base-button" type="button" style="background-color: #F5F5F5;" id="order_attach_button">
-                  <img src="img/image/attach-icon.png" width="30" height="30" aria-hidden="true">
-                </button>
-                <div class="feedback__form-attach-side">
-                  <h3 class="feedback__form-attach-side-title base-title">Прикрепить фотографии</h3>
-                  <span class="feedback__form-attach-side-text">
-                    Не больше 10 файлов.<br>
-                    Размер файла не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
-                  </span>
-                </div>
-              </div>
-              <input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" name="order_files" id="order_attach_input" tabindex="-1">
-            </div>
-            <button class="order-modal__next order-modal__next--disabled base-button" disabled type="button">Далее</button>
-          </div>
-          <div class="order-modal__inner-formset order-modal__inner-formset--two">
-            <span class="order-modal__inner-formset-info">Уточните место, время проведения работ и контактные данные</span>
-            <div class="order-modal__inner-formset-inputs order-modal__inner-formset-inputs--one">
-              <input class="order-modal__inputs-item" type="text" name="order_name" placeholder="Имя" required>
-              <input class="order-modal__inputs-item" type="tel" name="order_phone" placeholder="Телефон" required>
-            </div>
-            <div class="order-modal__inner-formset-inputs order-modal__inner-formset-inputs--two">
-              <input class="order-modal__inputs-item" type="text" name="order_address" placeholder="Введите адрес" required>
-              <input class="order-modal__inputs-item" type="text" name="order_home" placeholder="дом, корпус">
-              <input class="order-modal__inputs-item" type="text" name="order_apart" placeholder="картира">
-            </div>
-            <div class="order-modal__inner-formset-select">
-              <span class="order-modal__select-shown">
-                <span style="font-size:16px;font-weight:400;color:#BBB">
-                  Введите дату и время проведения работ
-                </span>
-              </span>
-              <ul class="order-modal__select-list base-list">
-                <li class="order-modal__select-list-item" data-value="Срочно">
-                  Срочно - мастер будет у вас в течении 15 минут
-                </li>
-                <li class="order-modal__select-list-item" data-value="Не срочно">
-                  Не срочно - выберите удобную для вас дату и время
-                </li>
-              </ul>
-              <svg class="order-modal__select-arrow" width="15" height="6" aria-hidden="true">
-                <use href="img/icon/sprite.svg#select-arrow-icon"></use>
-              </svg>
-              <input class="order-modal__select-input visually-hidden" type="text" name="order_speed" required>
-            </div>
-            <input class="order-modal__inner-formset-date visually-hidden" type="text" name="order_date" placeholder="Введите дату и время проведения работ">
-            <textarea class="order-modal__inner-formset-textarea" name="order_tip" placeholder="Примечания для мастера"></textarea>
-            <div class="order-modal__inner-formset-controls">
-              <button class="order-modal__prev blue-hover base-button" type="button">Назад</button>
-              <button class="order-modal__controls-submit blue-hover base-button" type="submit">Оставить заявку</button>
-            </div>
-            <div class="feedback__form-personal">
-              <p><span style="color:#BF3025">*</span> Нажимая кнопку «Оставить заявку», Вы даете свое <a href="#">согласие на обработку персональных данных</a></p>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="order-modal__success">
-        <h2 class="order-modal__success-title base-title">Спасибо, Ваш заказ принят!</h2>
-        <p class="order-modal__success-text base-par">
-          Ваш заказ успешно оформлен.<br>
-          Мы свяжемся с вами в ближайшее время.
-        </p>
-        <button class="order-modal__success-button order-modal__close-button base-button" type="button">На главную</button>
-        <figure class="order-modal__success-image base-figure">
-          <img class="order-modal__success-img" src="img/image/feedback-img.png" width="202" height="342" aria-hidden="true">
-        </figure>
-      </div>
-    </div>
-  </div>
+		<div class="order-modal">
+			<div class="order-modal__wrapper">
+				<button class="order-modal__close order-modal__close-button base-button">
+					<svg class="order-modal__close-icon" width="16" height="16" aria-hidden="true">
+						<use href="img/icon/sprite.svg#modal-close-icon"></use>
+					</svg>
+				</button>
+				<div class="order-modal__inner">
+					<div class="order-modal__inner-heading">
+						<h2 class="order-modal__inner-title base-title">Оформление услуги</h2>
+						<span class="order-modal__inner-steps">шаг:
+							<span>1</span>
+							из 2</span>
+					</div>
+					<form class="order-modal__inner-body order-modal__form" id="order_modal_form">
+						<div class="order-modal__inner-formset order-modal__inner-formset--one order-modal__inner-formset--active">
+							<label class="order-modal__inner-label">Что нужно сделать?
+								<input class="order-modal__inner-input order-modal__inner-input--work" type="text" name="order_work" required>
+								<div class="order-modal__inner-label-features">
+									<div class="order-modal__features-item">
+										<img class="order-modal__features-item-img" src="img/image/order-features-1.png" width="32" height="32" aria-hidden="true">
+										<span class="order-modal__inner__features-item-text">Бесплатный выезд</span>
+									</div>
+									<div class="order-modal__features-item">
+										<img class="order-modal__features-item-img" src="img/image/order-features-2.png" width="32" height="32" aria-hidden="true">
+										<span class="order-modal__inner__features-item-text">Скидка 10% на первый заказ</span>
+									</div>
+								</div>
+							</label>
+							<label class="order-modal__inner-label">Уточните подробности про заказ
+								<textarea class="order-modal__inner-textarea" name="order_text"></textarea>
+							</label>
+							<div class="feedback__form-attach">
+								<ul class="feedback__form-attach-list base-list" id="order_attach_list"></ul>
+								<div class="feedback__form-attach-info">
+									<button class="feedback__form-attach-button base-button" type="button" style="background-color: #F5F5F5;" id="order_attach_button">
+										<img src="img/image/attach-icon.png" width="30" height="30" aria-hidden="true">
+									</button>
+									<div class="feedback__form-attach-side">
+										<h3 class="feedback__form-attach-side-title base-title">Прикрепить фотографии</h3>
+										<span class="feedback__form-attach-side-text">
+											Не больше 10 файлов.<br>
+											Размер файла не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
+										</span>
+									</div>
+								</div>
+								<input class="feedback__form-attach-hidden visually-hidden" type="file" multiple accept=".jpg,.jpeg,.png" name="order_files" id="order_attach_input" tabindex="-1">
+							</div>
+							<button class="order-modal__next order-modal__next--disabled base-button" disabled type="button">Далее</button>
+						</div>
+						<div class="order-modal__inner-formset order-modal__inner-formset--two">
+							<span class="order-modal__inner-formset-info">Уточните место, время проведения работ и контактные данные</span>
+							<div class="order-modal__inner-formset-inputs order-modal__inner-formset-inputs--one">
+								<input class="order-modal__inputs-item" type="text" name="order_name" placeholder="Имя" required>
+								<input class="order-modal__inputs-item" type="tel" name="order_phone" placeholder="Телефон" required>
+							</div>
+							<div class="order-modal__inner-formset-inputs order-modal__inner-formset-inputs--two">
+								<input class="order-modal__inputs-item" type="text" name="order_address" placeholder="Введите адрес" required>
+								<input class="order-modal__inputs-item" type="text" name="order_home" placeholder="дом, корпус">
+								<input class="order-modal__inputs-item" type="text" name="order_apart" placeholder="картира">
+							</div>
+							<div class="order-modal__inner-formset-select">
+								<span class="order-modal__select-shown">
+									<span style="font-size:16px;font-weight:400;color:#BBB">
+										Выберете срочность приезда
+									</span>
+								</span>
+								<ul class="order-modal__select-list base-list">
+									<li class="order-modal__select-list-item" data-value="Срочно">
+										Срочно - мастер будет у вас в течении 15 минут
+									</li>
+									<li class="order-modal__select-list-item" data-value="Не срочно">
+										Не срочно - выберите удобную для вас дату и время
+									</li>
+								</ul>
+								<svg class="order-modal__select-arrow" width="15" height="6" aria-hidden="true">
+									<use href="img/icon/sprite.svg#select-arrow-icon"></use>
+								</svg>
+								<input class="order-modal__select-input visually-hidden" type="text" name="order_speed" required>
+							</div>
+							<input class="order-modal__inner-formset-date visually-hidden" type="text" name="order_date" placeholder="Введите дату и время проведения работ">
+							<textarea class="order-modal__inner-formset-textarea" name="order_tip" placeholder="Примечания для мастера"></textarea>
+							<div class="order-modal__inner-formset-controls">
+								<button class="order-modal__prev blue-hover base-button" type="button">Назад</button>
+								<button class="order-modal__controls-submit blue-hover base-button" type="submit">Оставить заявку</button>
+							</div>
+							<div class="feedback__form-personal">
+								<p>
+									<span style="color:#BF3025">*</span>
+									Нажимая кнопку «Оставить заявку», Вы даете свое
+									<a href="#">согласие на обработку персональных данных</a>
+								</p>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="order-modal__success">
+					<h2 class="order-modal__success-title base-title">Спасибо, Ваш заказ принят!</h2>
+					<p class="order-modal__success-text base-par">
+						Ваш заказ успешно оформлен.<br>
+						Мы свяжемся с вами в ближайшее время.
+					</p>
+					<button class="order-modal__success-button order-modal__close-button base-button" type="button">На главную</button>
+					<figure class="order-modal__success-image base-figure">
+						<img class="order-modal__success-img" src="img/image/feedback-img.png" width="202" height="342" aria-hidden="true">
+					</figure>
+				</div>
+			</div>
+		</div>
 
-  <div class="reviews-modal">
-    <div class="reviews-modal__wrapper">
-      <button class="reviews-modal__close base-button" type="button">
-        <svg class="reviews-modal__close-icon" width="16" height="16" aria-hidden="true">
-          <use href="img/icon/sprite.svg#modal-close-icon"></use>
-        </svg>
-      </button>
-      <div class="reviews-modal__inner">
-        <h2 class="reviews-modal__title base-title">Оформление отзыва</h2>
-        <form class="reviews-modal__form" id="reviewes_modal_form">
+		<div class="reviews-modal">
+			<div class="reviews-modal__wrapper">
+				<button class="reviews-modal__close base-button" type="button">
+					<svg class="reviews-modal__close-icon" width="16" height="16" aria-hidden="true">
+						<use href="img/icon/sprite.svg#modal-close-icon"></use>
+					</svg>
+				</button>
+				<div class="reviews-modal__inner">
+					<h2 class="reviews-modal__title base-title">Оформление отзыва</h2>
+					<form class="reviews-modal__form" id="reviewes_modal_form">
 
-          <div class="reviews-modal__image">
-            <button class="reviews-modal__image-button base-button" type="button" id="reviews_attach_button">
-              <svg class="reviews-modal__image-button-icon" width="24" height="24" aria-hidden="true">
-                <use href="img/icon/sprite.svg#reviews-button-icon"></use>
-              </svg>
-            </button>
-            <div class="reviews-modal__image-circle" id="reviews_attach_block"></div>
-            <div class="reviews-modal__image-info">
-              <h3 class="reviews-modal__image-title reviews-modal__form-title base-title">
-                Добавьте фотографию
-              </h3>
-              <span class="reviews-modal__image-desc">
-                Размер документа не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
-              </span>
-            </div>
-            <input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" name="reviews_file" id="reviews_attach_input" tabindex="-1">
-          </div>
+						<div class="reviews-modal__image">
+							<button class="reviews-modal__image-button base-button" type="button" id="reviews_attach_button">
+								<svg class="reviews-modal__image-button-icon" width="24" height="24" aria-hidden="true">
+									<use href="img/icon/sprite.svg#reviews-button-icon"></use>
+								</svg>
+							</button>
+							<div class="reviews-modal__image-circle" id="reviews_attach_block"></div>
+							<div class="reviews-modal__image-info">
+								<h3 class="reviews-modal__image-title reviews-modal__form-title base-title">
+									Добавьте фотографию
+								</h3>
+								<span class="reviews-modal__image-desc">
+									Размер документа не должен превышать 20 Мб. Формат: .jpeg, .jpg, .png
+								</span>
+							</div>
+							<input class="reviews-modal__attach-input visually-hidden" type="file" accept=".jpg,.jpeg,.png" name="reviews_file" id="reviews_attach_input" tabindex="-1">
+						</div>
 
-          <label class="reviews-modal__name reviews-modal__form-title">Ваше имя
-            <input class="reviews-modal__name-input" type="text" name="reviews_name" required>
-          </label>
+						<label class="reviews-modal__name reviews-modal__form-title">Ваше имя
+							<input class="reviews-modal__name-input" type="text" name="reviews_name" required>
+						</label>
 
-          <div class="reviews-modal__rating">
-            <h3 class="reviews-modal__rating-title reviews-modal__form-title base-title">Оценка</h3>
-            <div class="reviews-modal__rating-body">
-              <button class="reviews-modal__rating-button base-button" type="button" data-rating="1" aria-label="Одна звезда"></button>
-              <button class="reviews-modal__rating-button base-button" type="button" data-rating="2" aria-label="Две звезды"></button>
-              <button class="reviews-modal__rating-button base-button" type="button" data-rating="3" aria-label="Три звезды"></button>
-              <button class="reviews-modal__rating-button base-button" type="button" data-rating="4" aria-label="Четыре звезды"></button>
-              <button class="reviews-modal__rating-button base-button" type="button" data-rating="5" aria-label="Пять звёзд"></button>
-            </div>
-            <input class="reviews-modal__rating-input visually-hidden" type="text" name="reviews_rating" value="1" aria-hidden="true" required>
-          </div>
+						<div class="reviews-modal__rating">
+							<h3 class="reviews-modal__rating-title reviews-modal__form-title base-title">Оценка</h3>
+							<div class="reviews-modal__rating-body">
+								<button class="reviews-modal__rating-button base-button" type="button" data-rating="1" aria-label="Одна звезда"></button>
+								<button class="reviews-modal__rating-button base-button" type="button" data-rating="2" aria-label="Две звезды"></button>
+								<button class="reviews-modal__rating-button base-button" type="button" data-rating="3" aria-label="Три звезды"></button>
+								<button class="reviews-modal__rating-button base-button" type="button" data-rating="4" aria-label="Четыре звезды"></button>
+								<button class="reviews-modal__rating-button base-button" type="button" data-rating="5" aria-label="Пять звёзд"></button>
+							</div>
+							<input class="reviews-modal__rating-input visually-hidden" type="text" name="reviews_rating" value="1" aria-hidden="true" required>
+						</div>
 
-          <label class="reviews-modal__text reviews-modal__form-title">Отзыв
-            <textarea class="reviews-modal__text-textarea" name="reviews_text"></textarea>
-          </label>
+						<label class="reviews-modal__text reviews-modal__form-title">Отзыв
+							<textarea class="reviews-modal__text-textarea" name="reviews_text"></textarea>
+						</label>
 
-          <button class="reviews-modal__submit base-button" type="submit">Отправить</button>
+						<button class="reviews-modal__submit base-button" type="submit">Отправить</button>
 
-        </form>
-      </div>
-      <div class="reviews-modal__success">
-        <span>🥰</span>
-        <span>Спасибо, Ваш отзыв важен для нас!</span>
-      </div>
-    </div>
-  </div>
+					</form>
+				</div>
+				<div class="reviews-modal__success">
+					<span>🥰</span>
+					<span>Спасибо, Ваш отзыв важен для нас!</span>
+				</div>
+			</div>
+		</div>
 
-  <header class="page-header">
-    <nav class="main-nav">
-      <div class="main-nav__container base-container">
-        <a class="main-nav__logo-link base-link" href="index.html">
-          <picture class="main-nav__logo-picture">
-            <source srcset="img/image/logo.webp" type="image/webp">
-            <img class="main-nav__logo-img" src="img/image/logo.png" width="148" height="29" alt="#">
-          </picture>
-        </a>
-        <div class="main-nav__mobile-menu" id="mobile_menu">
-          <ul class="main-nav__mobile-menu-list base-list">
-            <li class="main-nav__mobile-menu-item">
-              <a class="main-nav__mobile-menu-link base-link" href="index.html">Главная</a>
-            </li>
-            <li class="main-nav__mobile-menu-item">
-              <a class="main-nav__mobile-menu-link base-link" href="#services">Услуги</a>
-            </li>
-            <li class="main-nav__mobile-menu-item">
-              <a class="main-nav__mobile-menu-link base-link" href="#reviews">Отзывы</a>
-            </li>
-          </ul>
-          <a class="main-nav__mobile-menu-phone-link base-link" href="tel:+7 937 172 - 23-35">
-            <svg class="main-nav__mobile-menu-phone-icon" width="18" height="18" aria-hidden="true">
-              <use href="img/icon/sprite.svg#phone-icon"></use>
-            </svg>
-            <span class="main-nav__mobile-menu-phone-text">+7 937 172 - 23-35</span>
-          </a>
-          <a class="main-nav__mobile-menu-button order-modal-button base-link" href="#feedback">
-            Заказать звонок
-          </a>
-        </div>
-        <button class="main-nav__burger base-button" id="burger">
-          <span class="main-nav__burger-line"></span>
-          <span class="main-nav__burger-line"></span>
-          <span class="main-nav__burger-line"></span>
-        </button>
-      </div>
-    </nav>
-  </header>
+		<header class="page-header">
+			<nav class="main-nav">
+				<div class="main-nav__container base-container">
+					<a class="main-nav__logo-link base-link" href="index.html">
+						<picture class="main-nav__logo-picture">
+							<source srcset="img/image/logo.webp" type="image/webp">
+							<img class="main-nav__logo-img" src="img/image/logo.png" width="148" height="29" alt="#">
+						</picture>
+					</a>
+					<div class="main-nav__mobile-menu" id="mobile_menu">
+						<ul class="main-nav__mobile-menu-list base-list">
+							<li class="main-nav__mobile-menu-item">
+								<a class="main-nav__mobile-menu-link base-link" href="index.html">Главная</a>
+							</li>
+							<li class="main-nav__mobile-menu-item">
+								<a class="main-nav__mobile-menu-link base-link" href="#services">Услуги</a>
+							</li>
+							<li class="main-nav__mobile-menu-item">
+								<a class="main-nav__mobile-menu-link base-link" href="#reviews">Отзывы</a>
+							</li>
+						</ul>
+						<a class="main-nav__mobile-menu-phone-link base-link" href="tel:+7 937 172 - 23-35">
+							<svg class="main-nav__mobile-menu-phone-icon" width="18" height="18" aria-hidden="true">
+								<use href="img/icon/sprite.svg#phone-icon"></use>
+							</svg>
+							<span class="main-nav__mobile-menu-phone-text">+7 937 172 - 23-35</span>
+						</a>
+						<a class="main-nav__mobile-menu-button order-modal-button base-link" href="#feedback">
+							Заказать звонок
+						</a>
+					</div>
+					<button class="main-nav__burger base-button" id="burger">
+						<span class="main-nav__burger-line"></span>
+						<span class="main-nav__burger-line"></span>
+						<span class="main-nav__burger-line"></span>
+					</button>
+				</div>
+			</nav>
+		</header>
+	</body>
+</html>
+
 
 <main class="page-content">
   <section class="heading">
